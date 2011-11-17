@@ -1,0 +1,2 @@
+INDEX VERSION 1.125+C:\Users\Brazil\Szar-hazi\.metadata\.plugins\org.rubypeople.rdt.core
+850315278.index

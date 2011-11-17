@@ -1,0 +1,118 @@
+!SESSION 2011-11-16 22:30:11.077 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_20
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -application com.aptana.ide.desktop.integration.Application -application com.aptana.ide.desktop.integration.Application
+Command-line arguments:  -os win32 -ws win32 -arch x86 -application com.aptana.ide.desktop.integration.Application -data C:\Users\Brazil\Szar-hazi -application com.aptana.ide.desktop.integration.Application
+
+!ENTRY org.eclipse.ui.workbench 2 0 2011-11-16 22:30:17.187
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2011-11-16 22:30:17.187
+!MESSAGE Conflict for 'AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.RenameAction':
+HandlerActivation(commandId=AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.RenameAction,
+	handler=ActionDelegateHandlerProxy(null,org.rubypeople.rdt.refactoring.action.RenameAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@15a3a1),sourcePriority=16384)
+HandlerActivation(commandId=AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.RenameAction,
+	handler=ActionDelegateHandlerProxy(null,org.rubypeople.rdt.refactoring.action.RenameAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@15a3a1),sourcePriority=16384)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2011-11-16 22:30:17.187
+!MESSAGE Conflict for 'AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.MoveFieldAction':
+HandlerActivation(commandId=AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.MoveFieldAction,
+	handler=ActionDelegateHandlerProxy(null,org.rubypeople.rdt.refactoring.action.MoveFieldAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@15a3a1),sourcePriority=16384)
+HandlerActivation(commandId=AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.MoveFieldAction,
+	handler=ActionDelegateHandlerProxy(null,org.rubypeople.rdt.refactoring.action.MoveFieldAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@15a3a1),sourcePriority=16384)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2011-11-16 22:30:17.187
+!MESSAGE Conflict for 'AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.EncapsulateFieldAction':
+HandlerActivation(commandId=AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.EncapsulateFieldAction,
+	handler=ActionDelegateHandlerProxy(null,org.rubypeople.rdt.refactoring.action.EncapsulateFieldAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@15a3a1),sourcePriority=16384)
+HandlerActivation(commandId=AUTOGEN:::org.rubypeople.rdt.refactoring.refactoringContext/org.rubypeople.rdt.refactoring.action.EncapsulateFieldAction,
+	handler=ActionDelegateHandlerProxy(null,org.rubypeople.rdt.refactoring.action.EncapsulateFieldAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@15a3a1),sourcePriority=16384)
+
+!ENTRY org.rubypeople.rdt.launching 4 4 2011-11-16 22:30:20.970
+!MESSAGE Failed to retrieve platform for c:\dev\ruby-1.9.3
+
+!ENTRY org.rubypeople.rdt.launching 1 -1 2011-11-16 22:30:20.971
+!MESSAGE Starting: c:\dev\ruby-1.9.3\bin\ruby.exe -I C:\Users\Brazil\Szar-hazi\.metadata\.plugins\org.rubypeople.rdt.launching\ruby\flush -rrdt_stream_sync.rb -- c:\dev\ruby-1.9.3\bin\gem sources -l
+
+!ENTRY org.rubypeople.rdt.launching 4 4 2011-11-16 22:30:21.026
+!MESSAGE Failed to retrieve platform for c:\dev\ruby-1.9.3
+
+!ENTRY org.rubypeople.rdt.launching 1 -1 2011-11-16 22:30:21.027
+!MESSAGE Starting: c:\dev\ruby-1.9.3\bin\ruby.exe -I C:\Users\Brazil\Szar-hazi\.metadata\.plugins\org.rubypeople.rdt.launching\ruby\flush -rrdt_stream_sync.rb -- c:\dev\ruby-1.9.3\bin\gem -v
+
+!ENTRY org.rubypeople.rdt.launching 4 4 2011-11-16 22:30:22.107
+!MESSAGE Failed to retrieve platform for c:\dev\ruby-1.9.3
+
+!ENTRY org.rubypeople.rdt.launching 1 -1 2011-11-16 22:30:22.107
+!MESSAGE Starting: c:\dev\ruby-1.9.3\bin\ruby.exe -I C:\Users\Brazil\Szar-hazi\.metadata\.plugins\org.rubypeople.rdt.launching\ruby\flush -rrdt_stream_sync.rb -- c:\dev\ruby-1.9.3\bin\gem query -d
+
+!ENTRY org.rubypeople.rdt.launching 4 4 2011-11-16 22:30:23.203
+!MESSAGE Failed to retrieve platform for c:\dev\ruby-1.9.3
+
+!ENTRY org.rubypeople.rdt.launching 4 4 2011-11-16 22:30:23.259
+!MESSAGE Failed to retrieve platform for c:\dev\ruby-1.9.3
+
+!ENTRY org.rubypeople.rdt.launching 4 4 2011-11-16 22:30:23.315
+!MESSAGE Failed to retrieve platform for c:\dev\ruby-1.9.3
+
+!ENTRY org.rubypeople.rdt.launching 4 4 2011-11-16 22:30:23.371
+!MESSAGE Failed to retrieve platform for c:\dev\ruby-1.9.3
+
+!ENTRY org.rubypeople.rdt.launching 4 4 2011-11-16 22:30:23.426
+!MESSAGE Failed to retrieve platform for c:\dev\ruby-1.9.3
+
+!ENTRY org.rubypeople.rdt.launching 4 4 2011-11-16 22:30:23.481
+!MESSAGE Failed to retrieve platform for c:\dev\ruby-1.9.3
+
+!ENTRY org.rubypeople.rdt.launching 4 4 2011-11-16 22:30:23.536
+!MESSAGE Failed to retrieve platform for c:\dev\ruby-1.9.3
+
+!ENTRY org.rubypeople.rdt.launching 4 4 2011-11-16 22:30:23.590
+!MESSAGE Failed to retrieve platform for c:\dev\ruby-1.9.3
+
+!ENTRY org.rubypeople.rdt.launching 4 4 2011-11-16 22:30:23.644
+!MESSAGE Failed to retrieve platform for c:\dev\ruby-1.9.3
+
+!ENTRY org.rubypeople.rdt.launching 4 4 2011-11-16 22:30:23.698
+!MESSAGE Failed to retrieve platform for c:\dev\ruby-1.9.3
+
+!ENTRY org.rubypeople.rdt.launching 4 4 2011-11-16 22:30:23.751
+!MESSAGE Failed to retrieve platform for c:\dev\ruby-1.9.3
+
+!ENTRY org.rubypeople.rdt.launching 4 4 2011-11-16 22:30:23.806
+!MESSAGE Failed to retrieve platform for c:\dev\ruby-1.9.3
+
+!ENTRY com.aptana.ide.core 4 0 2011-11-16 22:31:31.488
+!MESSAGE (Build 2.0.5.1278523018) [ERROR] An error occurred while shutting down the database
+!STACK 0
+java.sql.SQLException: No suitable driver found for jdbc:derby:aptanaDB;shutdown=true
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.aptana.ide.core.db.AptanaDB.shutdown(AptanaDB.java:320)
+	at com.aptana.ide.core.AptanaCorePlugin.stop(AptanaCorePlugin.java:73)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$2.run(BundleContextImpl.java:843)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.stop(BundleContextImpl.java:836)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.stopWorker(BundleHost.java:474)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.suspend(AbstractBundle.java:546)
+	at org.eclipse.osgi.framework.internal.core.Framework.suspendBundle(Framework.java:1098)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.decFWSL(StartLevelManager.java:593)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:261)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.shutdown(StartLevelManager.java:216)
+	at org.eclipse.osgi.framework.internal.core.InternalSystemBundle.suspend(InternalSystemBundle.java:266)
+	at org.eclipse.osgi.framework.internal.core.Framework.shutdown(Framework.java:685)
+	at org.eclipse.osgi.framework.internal.core.Framework.close(Framework.java:583)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.shutdown(EclipseStarter.java:409)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:200)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:559)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:514)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1311)

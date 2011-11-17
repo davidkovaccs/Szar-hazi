@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gems>
+	<gem>
+		<name>coffee-script-source</name>
+		<version>1.1.3</version>
+		<description>The CoffeeScript Compiler</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>activemodel</name>
+		<version>3.1.1</version>
+		<description>A toolkit for building modeling frameworks (part of Rails).</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>mysql</name>
+		<version>2.7.3</version>
+		<description>A win32-native build of the MySQL API module for Ruby.</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>warden</name>
+		<version>1.0.6</version>
+		<description>Rack middleware that provides authentication for rack applications</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>rake</name>
+		<version>0.9.2.2</version>
+		<description>This rake is bundled with Ruby</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>sass</name>
+		<version>3.1.10</version>
+		<description>A powerful but elegant CSS compiler that makes CSS fun again.</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>rack-cache</name>
+		<version>1.1</version>
+		<description>HTTP Caching for Rack</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>uglifier</name>
+		<version>1.0.4</version>
+		<description>Ruby wrapper for UglifyJS JavaScript compressor</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>coffee-script</name>
+		<version>2.2.0</version>
+		<description>Ruby CoffeeScript Compiler</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>hike</name>
+		<version>1.2.1</version>
+		<description>Find files in a set of paths</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>ansi</name>
+		<version>1.4.1</version>
+		<description>ANSI at your fingertips!</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>multi_json</name>
+		<version>1.0.3</version>
+		<description>A gem to provide swappable JSON backends.</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>sqlite3</name>
+		<version>1.3.4</version>
+		<description>This module allows Ruby programs to interface with the SQLite3 database engine (http://www.sqlite.org)</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>bcrypt-ruby</name>
+		<version>3.0.1</version>
+		<description>OpenBSD&apos;s bcrypt() password hashing algorithm.</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>json</name>
+		<version>1.6.1</version>
+		<description>JSON Implementation for Ruby</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>bigdecimal</name>
+		<version>1.1.0</version>
+		<description>This bigdecimal is bundled with Ruby</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>jquery-rails</name>
+		<version>1.0.17</version>
+		<description>Use jQuery with Rails 3</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>sprockets</name>
+		<version>2.0.3</version>
+		<description>Rack-based asset packaging system</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>rack</name>
+		<version>1.3.5</version>
+		<description>a modular Ruby webserver interface</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>polyglot</name>
+		<version>0.3.3</version>
+		<description>Augment &apos;require&apos; to load non-Ruby file types</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>sass-rails</name>
+		<version>3.1.4</version>
+		<description>Sass adapter for the Rails asset pipeline.</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>rdoc</name>
+		<version>3.9.4</version>
+		<description>RDoc produces HTML and command-line documentation for Ruby projects</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>builder</name>
+		<version>3.0.0</version>
+		<description>Builders for MarkUp.</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>rack-mount</name>
+		<version>0.8.3</version>
+		<description>Stackable dynamic tree based Rack router</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>actionpack</name>
+		<version>3.1.1</version>
+		<description>Web-flow and rendering framework putting the VC in MVC (part of Rails).</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>thor</name>
+		<version>0.14.6</version>
+		<description>A scripting framework that replaces rake, sake and rubigen</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>fastthread</name>
+		<version>1.0.1</version>
+		<description>Optimized replacement for thread.rb primitives</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>tzinfo</name>
+		<version>0.3.31</version>
+		<description>Daylight-savings aware timezone library</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>activesupport</name>
+		<version>3.1.1</version>
+		<description>A toolkit of support libraries and Ruby core extensions extracted from the Rails framework.</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>coffee-rails</name>
+		<version>3.1.1</version>
+		<description>Coffee Script adapter for the Rails asset pipeline.</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>activeresource</name>
+		<version>3.1.1</version>
+		<description>REST modeling framework (part of Rails).</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>cancan</name>
+		<version>1.6.7</version>
+		<description>Simple authorization solution for Rails.</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>i18n</name>
+		<version>0.6.0</version>
+		<description>New wave Internationalization support for Ruby</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>ruby-debug-ide</name>
+		<version>0.4.5</version>
+		<description>IDE interface for ruby-debug.</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>minitest</name>
+		<version>2.5.1</version>
+		<description>This minitest is bundled with Ruby</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>railties</name>
+		<version>3.1.1</version>
+		<description>Tools for creating, working with, and running Rails applications.</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>erubis</name>
+		<version>2.7.0</version>
+		<description>a fast and extensible eRuby implementation which supports multi-language</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>orm_adapter</name>
+		<version>0.0.5</version>
+		<description>orm_adapter provides a single point of entry for using basic features of popular ruby ORMs.  Its target audience is gem authors who want to support many ruby ORMs.</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>activerecord</name>
+		<version>3.1.1</version>
+		<description>Object-relational mapper framework (part of Rails).</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>ruby-debug-base</name>
+		<version>0.10.3</version>
+		<description>Fast Ruby debugger - core component</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>tilt</name>
+		<version>1.3.3</version>
+		<description>Generic interface to multiple Ruby template engines</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>rack-test</name>
+		<version>0.6.1</version>
+		<description>Simple testing API built on Rack</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>devise</name>
+		<version>1.4.9</version>
+		<description>Flexible authentication solution for Rails with Warden</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>linecache</name>
+		<version>0.43</version>
+		<description>Read file with caching</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>sqlite3-ruby</name>
+		<version>1.2.1</version>
+		<description>SQLite3/Ruby is a module to allow Ruby scripts to interface with a SQLite database.</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>mail</name>
+		<version>2.3.0</version>
+		<description>Mail provides a nice Ruby DSL for making, sending and reading emails.</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>gem_plugin</name>
+		<version>0.2.3</version>
+		<description>A plugin system based on rubygems that uses dependencies only</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>rack-ssl</name>
+		<version>1.3.2</version>
+		<description>Force SSL/TLS in your app.</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>turn</name>
+		<version>0.8.3</version>
+		<description>Test::Unit Reporter (New) -- new output format for Test::Unit</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>execjs</name>
+		<version>1.2.9</version>
+		<description>Run JavaScript code from Ruby</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>rdoc</name>
+		<version>3.11</version>
+		<description>RDoc produces HTML and command-line documentation for Ruby projects</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>json</name>
+		<version>1.5.4</version>
+		<description>JSON Implementation for Ruby</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>io-console</name>
+		<version>0.3</version>
+		<description>This io-console is bundled with Ruby</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>bundler</name>
+		<version>1.0.21</version>
+		<description>The best way to manage your application&apos;s dependencies</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>rails</name>
+		<version>3.1.1</version>
+		<description>Full-stack web application framework.</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>mime-types</name>
+		<version>1.17.2</version>
+		<description>This library allows for the identification of a file&apos;s likely MIME content type</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>mongrel</name>
+		<version>1.1.5</version>
+		<description>A small fast HTTP library and server that runs Rails, Camping, Nitro and Iowa apps.</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>uglifier</name>
+		<version>1.1.0</version>
+		<description>Ruby wrapper for UglifyJS JavaScript compressor</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>arel</name>
+		<version>2.2.1</version>
+		<description>Arel is a SQL AST manager for Ruby</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>actionmailer</name>
+		<version>3.1.1</version>
+		<description>Email composition, delivery, and receiving framework (part of Rails).</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>treetop</name>
+		<version>1.4.10</version>
+		<description>A Ruby-based text parsing and interpretation DSL</description>
+		<platform>ruby</platform>
+	</gem>
+	<gem>
+		<name>cgi_multipart_eof_fix</name>
+		<version>2.5.0</version>
+		<description>Fix an exploitable bug in CGI multipart parsing.</description>
+		<platform>ruby</platform>
+	</gem>
+</gems>
