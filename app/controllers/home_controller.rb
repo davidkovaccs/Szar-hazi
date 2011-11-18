@@ -3,6 +3,12 @@ class HomeController < ApplicationController
   end
 
   def show_accounts
-    Rails.logger.info "hello"
+  end
+
+  def show_orders
+  end
+
+  def new_order
+    @order = Order.new
   end
 end

@@ -10,6 +10,8 @@ SzarHazi::Application.routes.draw do
    root :to => "home#index"
 
   match 'show_accounts' => 'home#show_accounts'
+  match 'show_orders' => 'home#show_orders'
+  match 'new_order' => 'home#new_order'
   match 'accounts/:id/activate' => 'accounts#activate'
 
   # The priority is based upon order of creation:

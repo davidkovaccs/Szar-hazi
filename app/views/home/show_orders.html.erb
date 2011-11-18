@@ -1,0 +1,27 @@
+<% title "MY Orders" %>
+
+<table>
+  <tr>
+    <th>Account</th>
+    <th>Stock</th>
+    <th>Price</th>
+    <th>Sell</th>
+  </tr>
+  <%
+    orders = Array.new
+    current_user.accounts.map {|acc| orders = orders | acc.orders }
+  %>
+  <% for order in orders %>
+    <tr>
+      <td><%= order.account.name %></td>
+      <td><%= order.stock.name %></td>
+      <td><%= order.price %></td>
+      <td><%= order.sell %></td>
+      <td><%= link_to "Show", order %></td>
+      <td><%= link_to "Edit", edit_order_path(order) %></td>
+      <td><%= link_to "Destroy", order, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Order", new_order_path %></p>
