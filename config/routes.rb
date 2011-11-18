@@ -1,4 +1,8 @@
 SzarHazi::Application.routes.draw do
+  resources :orders
+
+  resources :accounts
+
   resources :stocks
 
   devise_for :users

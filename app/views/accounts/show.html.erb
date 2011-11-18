@@ -1,0 +1,16 @@
+<% title "Account" %>
+
+<p>
+  <strong>User:</strong>
+  <%= @account.user_id %>
+</p>
+<p>
+  <strong>Balance:</strong>
+  <%= @account.balance %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_account_path(@account) %> |
+  <%= link_to "Destroy", @account, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", accounts_path %>
+</p>

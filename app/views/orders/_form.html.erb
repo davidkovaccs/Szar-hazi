@@ -1,0 +1,20 @@
+<%= form_for @order do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :account_id %><br />
+    <%= f.number_field :account_id %>
+  </p>
+  <p>
+    <%= f.label :stock_id %><br />
+    <%= f.number_field :stock_id %>
+  </p>
+  <p>
+    <%= f.label :price %><br />
+    <%= f.number_field :price %>
+  </p>
+  <p>
+    <%= f.label :sell %><br />
+    <%= f.number_field :sell %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

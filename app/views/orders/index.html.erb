@@ -1,0 +1,23 @@
+<% title "Orders" %>
+
+<table>
+  <tr>
+    <th>Account</th>
+    <th>Stock</th>
+    <th>Price</th>
+    <th>Sell</th>
+  </tr>
+  <% for order in @orders %>
+    <tr>
+      <td><%= order.account_id %></td>
+      <td><%= order.stock_id %></td>
+      <td><%= order.price %></td>
+      <td><%= order.sell %></td>
+      <td><%= link_to "Show", order %></td>
+      <td><%= link_to "Edit", edit_order_path(order) %></td>
+      <td><%= link_to "Destroy", order, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Order", new_order_path %></p>
