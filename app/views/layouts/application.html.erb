@@ -3,16 +3,33 @@
   <head>
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
     <%= stylesheet_link_tag "application" %>
+    <%= stylesheet_link_tag "custom" %>
     <%= javascript_include_tag :defaults %>
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
   </head>
   <body>
+    <h1>Tőzsdei kereskedő rendszer</h1>
     <div id="container">
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <% end %>
       <%= content_tag :h1, yield(:title) if show_title? %>
+
+      <div>
+      <div id="menu">
+        <ul>
+          <li><%= link_to "Kezdolap", '/' %></li>
+          <li><%= link_to "Szamlak", "/show_accounts" %></li>
+          <li><%= link_to "Uj Megbizas", '/' %></li>
+          <li><%= link_to "Megbizasok", '/' %></li>
+          <li><%= link_to "Ugyletek", '/' %></li>
+        </ul>
+      </div>
+      <br/>
+      <br/>
+
+      <%= yield %>
 
       <div id="user_nav">
 
@@ -24,8 +41,7 @@
           <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
         <% end %>
       </div>
-
-      <%= yield %>
+      </div>
     </div>
   </body>
 </html>

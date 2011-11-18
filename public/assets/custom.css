@@ -1,0 +1,16 @@
+#menu
+{
+  float: none;
+  display: block;
+}
+
+#menu ul
+{
+  list-style-type: none;
+}
+
+#menu li
+{
+  float: left;
+  padding-right: 20px;
+}
