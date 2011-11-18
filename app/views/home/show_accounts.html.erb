@@ -4,12 +4,15 @@
   <tr>
     <th>Name</th>
     <th>Balance</th>
+    <th>Active</th>
   </tr>
   <% for account in current_user.accounts %>
     <tr>
       <td><%= account.name %></td>
       <td><%= account.balance %></td>
+      <td><%= account.active %></td>
       <td><%= link_to "Show", account %></td>
+      <td><%= link_to "Activate", :controller => "accounts", :action =>  'activate', :id => account.id %></td>
       <td><%= link_to "Edit", edit_account_path(account) %></td>
       <td><%= link_to "Destroy", account, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>

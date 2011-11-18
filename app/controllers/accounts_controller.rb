@@ -35,6 +35,18 @@ class AccountsController < ApplicationController
     end
   end
 
+  def activate
+    acc = current_user.accounts.find_by_active(1)
+    if (acc)
+      acc.active = 0
+      acc.save
+    end
+    @account = Account.find(params[:id])
+    @account.active = 1
+    @account.save
+    redirect_to '/show_accounts', :notice => "Account " + @account.name + " is activated"
+  end
+
   def destroy
     @account = Account.find(params[:id])
     @account.destroy
