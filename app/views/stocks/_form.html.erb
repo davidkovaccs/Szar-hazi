@@ -1,0 +1,12 @@
+<%= form_for @stock do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :price %><br />
+    <%= f.number_field :price %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

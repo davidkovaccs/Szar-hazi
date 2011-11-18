@@ -1,0 +1,16 @@
+<% title "Stock" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @stock.name %>
+</p>
+<p>
+  <strong>Price:</strong>
+  <%= @stock.price %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_stock_path(@stock) %> |
+  <%= link_to "Destroy", @stock, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", stocks_path %>
+</p>
