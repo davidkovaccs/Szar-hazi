@@ -1,3 +1,22 @@
+#user_nav
+{
+  position: fixed;
+  top: 20px;
+  left: 850px;
+  display: inline;
+  padding-right: 10px;
+}
+
+#user_nav td
+{
+  padding-left: 20px;
+}
+
+#user_nav a
+{
+  color: white;
+}
+
 #menu
 {
   float: none;

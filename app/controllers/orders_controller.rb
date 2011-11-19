@@ -1,14 +1,35 @@
 class OrdersController < ApplicationController
   def index
+    if current_user.accounts.empty? then
+      flash[:alert] = "Nincs még számlája, hozzon létre egyet, hogy megbízást tudjon kötni."
+      redirect_to :controller => "accounts", :action => 'new'
+      return
+    end
+
     @orders = Order.all
   end
 
   def show
+    if current_user.accounts.empty? then
+      flash[:alert] = "Nincs még számlája, hozzon létre egyet, hogy megbízást tudjon kötni."
+      redirect_to :controller => "accounts", :action => 'new'
+      return
+    end
     @order = Order.find(params[:id])
   end
 
   def new
+    if current_user.accounts.empty? then
+      flash[:alert] = "Nincs még számlája, hozzon létre egyet, hogy megbízást tudjon kötni."
+      redirect_to :controller => "accounts", :action => 'new'
+      return
+    end
+
     @order = Order.new
+  end
+  
+  def check_for_account
+    
   end
 
   def create

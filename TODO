@@ -7,8 +7,8 @@ enh:
 user:
  * eladasi tranzakciot csak akkor engedni letrehozni ha van is eleg
  * megbizasnak lejarati idot adni, majd torolni
- * grafikon rajzolaskor csak az utolso 5-ot szamitsa bele az adott ido intervallumbol
- * ha nincs account hibauzenetet megjeleniteni
+ * grafikon rajzolaskor csak az utolso 5-ot szamitsa bele az adott ido intervallumbol (david)
+ * ha nincs account hibauzenetet megjeleniteni (david)
  * megbizast csak ket kulonbozo szamlarol lehessen ugylette formalni
 
 
