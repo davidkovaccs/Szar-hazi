@@ -5,7 +5,7 @@ class Stock < ActiveRecord::Base
     p = 0
     i = 0
 
-    Transaction.all.map { |trans|
+    Transaction.find(:all, :order => 'created_at DESC').map { |trans|
         order = trans.orders.first
         if !order then
           Rails.logger.info 'Hiba: ' + trans.id.to_s + ', ' + trans.orders.to_s

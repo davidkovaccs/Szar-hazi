@@ -33,5 +33,17 @@ namespace :db do
       50.times do |n|
         Transaction.create!( :created_at => (9 - (n / 5)).days.ago )
       end
+      100.times do |n|
+        if n % 2 == 0 then price = rand(1000) end
+        Order.create!(  :account_id => n+1,
+                        :stock_id => 2,
+                        :price => price,
+                        :sell => n % 2,
+                        :transaction_id => (n + 100 + 2)/2
+                   )
+      end
+      50.times do |n|
+        Transaction.create!( :created_at => (9 - (n / 5)).days.ago )
+      end
   end
 end

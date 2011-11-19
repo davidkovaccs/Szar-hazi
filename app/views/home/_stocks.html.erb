@@ -5,7 +5,7 @@
   </tr>
   <% for stock in Stock.all %>
     <tr>
-      <td><%= stock.name %></td>
+      <td><%= link_to stock.name, :stock => stock.id %></td>
       <td><%= stock.price %></td>
     </tr>
   <% end %>
