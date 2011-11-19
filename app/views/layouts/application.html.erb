@@ -28,17 +28,19 @@
       <%= content_tag :h1, yield(:title) if show_title? %>
 
       <div>
-      <div id="menu">
-        <ul>
-          <li><%= link_to "Kezdolap", '/' %></li>
-          <li><%= link_to "Szamlak", "/show_accounts" %></li>
-          <li><%= link_to "Uj Megbizas", :controller => 'orders', :action => 'new' %></li>
-          <li><%= link_to "Megbizasok", :controller => 'orders', :action => 'index' %></li>
-          <li><%= link_to "Ugyletek", :controller => 'transactions', :action => 'index' %></li>
-        </ul>
-      </div>
-      <br/>
-      <br/>
+      <% if user_signed_in? %>
+        <div id="menu">
+          <ul>
+            <li><%= link_to "Kezdolap", '/' %></li>
+            <li><%= link_to "Szamlak", "/show_accounts" %></li>
+            <li><%= link_to "Uj Megbizas", :controller => 'orders', :action => 'new' %></li>
+            <li><%= link_to "Megbizasok", :controller => 'orders', :action => 'index' %></li>
+            <li><%= link_to "Ugyletek", :controller => 'transactions', :action => 'index' %></li>
+          </ul>
+        </div>
+        <br/>
+        <br/>
+      <% end %>
 
       <%= yield %>
 
