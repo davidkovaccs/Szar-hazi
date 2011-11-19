@@ -1,10 +1,17 @@
 <% title "New Order" %>
+    <% 
+      if current_user.accounts.find_by_active(1)
+        selected = current_user.accounts.find_by_active(1).id
+       else
+        selected = 1
+      end
+    %>
 
 <%= form_for @order do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :account_id %><br />
-    <%= f.collection_select :account_id, current_user.accounts, :id, :name, { :selected => current_user.accounts.find_by_active(1).id, :include_blank => false } %>
+    <%= f.collection_select :account_id, current_user.accounts, :id, :name, { :selected => selected, :include_blank => false } %>
   </p>
   <p>
     <%= f.label :stock_id %><br />
