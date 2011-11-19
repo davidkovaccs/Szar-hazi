@@ -6,16 +6,10 @@ class Stock < ActiveRecord::Base
     i = 0
 
     Transaction.find(:all, :order => 'created_at DESC').map { |trans|
-        order = trans.orders.first
-        if !order then
-          Rails.logger.info 'Hiba: ' + trans.id.to_s + ', ' + trans.orders.to_s
-        end
+        if (trans.stock_id != id) then next end
+        p += trans.price
+        i += 1
 
-        if order.stock.id == id then
-          Rails.logger.info 'ASDF'
-          p += order.price
-          i += 1
-        end
         if (i >= 5) then break end
     }
 

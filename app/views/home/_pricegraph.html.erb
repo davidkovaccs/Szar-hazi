@@ -21,12 +21,12 @@
                         i = 0
 
                         Transaction.find(:all, :conditions => "created_at >= '" + 10.days.ago.to_formatted_s(:db) + "'", :order => 'created_at').map { |trans|
-                            if trans.orders.first.stock_id != @stock_id.to_i then next end
+                            if trans.stock_id != @stock_id.to_i then next end
                             Rails.logger.info trans.created_at.to_s 
 
                             if trans.created_at >= (t-1).days.ago then
                               t -= 1
-                              if i != 0 then current_price /= i end
+                              if i != 0 then current_price /= i else current_price = 0 end
                               Rails.logger.info "Current price: #{current_price}"
                               %>
                               <td><%= "#{current_price}" %></td>
@@ -36,11 +36,11 @@
                             end
 
                             if trans.created_at >= t.days.ago and trans.created_at < (t-1).days.ago then
-                              current_price += trans.orders.first.price
+                              current_price += trans.price
                               i += 1
                             end
                         }
-                        if i != 0 then current_price /= i end
+                        if i != 0 then current_price /= i else current_price = 0 end
                         %>
                         <td><%= "#{current_price}" %></td>
                         <%

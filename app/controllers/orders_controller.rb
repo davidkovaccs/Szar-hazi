@@ -51,6 +51,8 @@ class OrdersController < ApplicationController
       if ord
         Rails.logger.info "ASDFASDFASDFASDF"
         trans = Transaction.new
+        trans.price = @order.price
+        trans.stock_id = @order.stock_id
         trans.save
         ord.transaction_id = trans.id
         @order.transaction_id = trans.id

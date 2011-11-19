@@ -44,6 +44,7 @@
   height: 300px;
   width: 185px;
   float: left;
+  overflow: auto;
 }
 
 #prices
