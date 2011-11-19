@@ -1,4 +1,5 @@
 fix:
+ * torles megjavitasa mindenhol
 
 enh:
 
@@ -7,10 +8,13 @@ enh:
 user:
  * megbizasnak lejarati idot adni, majd torolni
  * megbizast csak ket kulonbozo szamlarol lehessen ugylette formalni
-
+ * aktualis szamla kiirasa a  fooldalra
+ * eladas/vetel gomb a fooldalra
 
 broker:
- * 
+ * ugyfelek listazasa
+ * ugyfelek ugyleteinek listazasa
+ * ugyfelek megbizasainak listazasa
 
 admin:
- * 
+ * felhasznalom menedzselese
