@@ -10,6 +10,9 @@ user:
  * megbizast csak ket kulonbozo szamlarol lehessen ugylette formalni
  * aktualis szamla kiirasa a  fooldalra
  * eladas/vetel gomb a fooldalra
+ * aktualis instrumentum cimet a diagram fole
+ * aktualis instrumentum kijelolese a bal oldali boxban
+ * diagram x,y tengelyere szmaokat irogatni
 
 broker:
  * ugyfelek listazasa
