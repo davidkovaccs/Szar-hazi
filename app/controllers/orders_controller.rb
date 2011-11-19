@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  before_filter :authenticate_user!
   def index
     if current_user.accounts.empty? then
       flash[:alert] = "Nincs még számlája, hozzon létre egyet, hogy megbízást tudjon kötni."
