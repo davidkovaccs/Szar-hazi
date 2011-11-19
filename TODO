@@ -5,12 +5,10 @@ enh:
  * authorizacio, roleok
 
 user:
- * szamlara penzt visszatenni ha megbizas sikerul
  * eladasi tranzakciot csak akkor engedni letrehozni ha van is eleg
  * megbizasnak lejarati idot adni, majd torolni
- * fooldal layout (david)
- * arfolyam szamitas
- * grafikon megjelenites
+ * arfolyam szamitas (david)
+ * grafikon megjelenites (david)
 
 broker:
  * 
