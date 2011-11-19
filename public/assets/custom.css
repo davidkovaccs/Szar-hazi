@@ -17,27 +17,34 @@
 
 #upper
 {
-  background-color: red;
-  height: 400px;
+  height: 300px;
 }
 
 #stocks
 {
-  background-color: green;
-  height: 400px;
-  width: 250px;
+  height: 300px;
+  width: 185px;
   float: left;
 }
 
 #prices
 {
-  background-color: yellow;
-  height: 400px;
-  width: 936px;
+  height: 300px;
+  width: 750px;
+  float: left;
 }
 
 #lower
 {
   background-color: purple;
   height: 200px;
+}
+
+#holder {
+  float: left;
+  height: 250px;
+  width: 800px;
+  position: relative;
+  left: -60px;
+  top: 10px;
 }
