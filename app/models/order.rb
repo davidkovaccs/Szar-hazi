@@ -5,6 +5,14 @@ class Order < ActiveRecord::Base
   belongs_to :stock
   belongs_to :transaction
 
+  def print_type
+      if buy? then
+        "Vétel"
+      else
+        "Eladás"
+      end
+  end
+
   def buy?
     !@sell
   end

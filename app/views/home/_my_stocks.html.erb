@@ -1,0 +1,32 @@
+<% if user_signed_in? %>
+<table>
+  <tr>
+    <th>Instrumentum</th>
+    <th>Tipus</th>
+    <th>Ár</th>
+    <th>Szamla</th>
+    <th>Profit</th>
+    <th>Tranzakció időpontja</th>
+  </tr>
+  <%
+      my_orders = Array.new
+      current_user.accounts.map { |account|
+          account.orders.find(:all, :conditions => "sell = '0'").group_by(&:stock_id).each do |stock_id, corders|
+              ordered = corders.sort{|a,b| a.created_at <=> b.created_at}
+              my_orders |= [ordered.last]
+              Rails.logger.info "ASDF HELLO: " + stock_id.to_s
+          end
+      }
+  %>
+  <% for order in my_orders %>
+    <tr>
+      <td><%= order.stock.name %></td>
+      <td><%= order.print_type %></td>
+      <td><%= order.price %></td>
+      <td><%= order.account.name %></td>
+      <td><%= order.stock.price - order.price %></td>
+      <td><%= order.transaction.created_at.to_s %></td>
+    </tr>
+  <% end %>
+</table>
+<% end %>

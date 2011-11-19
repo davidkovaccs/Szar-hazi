@@ -7,9 +7,7 @@ enh:
 user:
  * eladasi tranzakciot csak akkor engedni letrehozni ha van is eleg
  * megbizasnak lejarati idot adni, majd torolni
- * grafikon kivalasztasa a bal oldali reszveny tablazatbol ( david )
  * grafikon rajzolaskor csak az utolso 5-ot szamitsa bele az adott ido intervallumbol
- * osszerakni a fooldal aljara a tablazatot
  * ha nincs account hibauzenetet megjeleniteni
  * megbizast csak ket kulonbozo szamlarol lehessen ugylette formalni
 
