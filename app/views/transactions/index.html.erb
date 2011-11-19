@@ -6,7 +6,15 @@
     <th>Price</th>
     <th>Stock</th>
   </tr>
-  <% for transaction in @transactions %>
+  <%
+    transactions = Array.new
+    current_user.accounts.map { | account |
+      account.orders.map { | order |
+        if order.transaction then transactions = transactions | [order.transaction] end
+      }
+    }
+  %>
+  <% for transaction in  transactions %>
     <tr>
       <td><%= transaction.id %></td>
       <td><%= transaction.orders.first.price %></td>
