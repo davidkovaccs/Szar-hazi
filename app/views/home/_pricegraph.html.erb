@@ -16,34 +16,23 @@
             <tbody>
                 <tr>
                     <%
-                        current_price = 0
-                        t = 10
-                        i = 0
 
-                        Transaction.find(:all, :conditions => "created_at >= '" + 10.days.ago.to_formatted_s(:db) + "'", :order => 'created_at').map { |trans|
-                            if trans.stock_id != @stock_id.to_i then next end
-                            Rails.logger.info trans.created_at.to_s 
-
-                            if trans.created_at >= (t-1).days.ago then
-                              t -= 1
-                              if i != 0 then current_price /= i else current_price = 0 end
-                              Rails.logger.info "Current price: #{current_price}"
-                              %>
-                              <td><%= "#{current_price}" %></td>
-                              <%
-                              current_price = 0
-                              i = 0
-                            end
-
-                            if trans.created_at >= t.days.ago and trans.created_at < (t-1).days.ago then
-                              current_price += trans.price
-                              i += 1
-                            end
-                        }
-                        if i != 0 then current_price /= i else current_price = 0 end
-                        %>
-                        <td><%= "#{current_price}" %></td>
-                        <%
+                        10.times do |i|
+                          current_price = 0
+                          j = 0
+                          Transaction.find(:all, :conditions => "created_at >= '" + (10-i).days.ago.to_formatted_s(:db) + "' and created_at < '" +
+                                    (10-1-i).days.ago.to_formatted_s(:db) + "'", :order => 'created_at').map { |trans|
+                                      if trans.stock_id != @stock_id.to_i then next end
+                                      Rails.logger.info trans.created_at.to_s 
+                                      j += 1
+                                      current_price += trans.price
+                                      if j >= 5 then break end
+                                    }
+                          if j != 0 then current_price /= j else current_price = 0 end
+                          %>
+                          <td><%= "#{current_price}" %></td>
+                          <%
+                        end
                     %>
                 </tr>
             </tbody>
