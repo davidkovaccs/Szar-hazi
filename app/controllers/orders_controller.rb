@@ -15,12 +15,17 @@ class OrdersController < ApplicationController
     @order = Order.new(params[:order])
 
     if @order.buy? and params[:order][:price].to_i > @order.account.balance
-      render :action => 'new', :alert => "Nincs eleg penz a szamlan"
+      flash[:alert] = "Nincs eleg penz a '" + @order.account.name + "' szamlan"
+      redirect_to :action => 'new'
       return
     end
 
     ord = Order.find(:first, :conditions => ["stock_id = ? and price = ? and sell != ?", @order.stock_id, @order.price, @order.sell])
     if @order.save
+      if @order.buy?
+        @order.update_account
+      end
+
       if ord
         Rails.logger.info "ASDFASDFASDFASDF"
         trans = Transaction.new
@@ -29,6 +34,12 @@ class OrdersController < ApplicationController
         @order.transaction_id = trans.id
         ord.save
         @order.save
+
+        if @order.buy?
+          ord.update_account
+        else
+          @order.update_account
+        end
       end
       redirect_to @order, :notice => "Successfully created order."
     else

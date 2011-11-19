@@ -10,10 +10,21 @@
   </head>
   <body>
     <h1>Tőzsdei kereskedő rendszer</h1>
+    <div id="user_nav">
+      <% if user_signed_in? %>
+        Signed in as <%= current_user.email %>. Not you?
+        <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+        <%= link_to "New account", new_account_path %>
+      <% else %>
+        <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+      <% end %>
+    </div>
+
     <div id="container">
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <% end %>
+
       <%= content_tag :h1, yield(:title) if show_title? %>
 
       <div>
@@ -31,16 +42,6 @@
 
       <%= yield %>
 
-      <div id="user_nav">
-
-        <% if user_signed_in? %>
-          Signed in as <%= current_user.email %>. Not you?
-          <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-          <%= link_to "New account", new_account_path %>
-        <% else %>
-          <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
-        <% end %>
-      </div>
       </div>
     </div>
   </body>

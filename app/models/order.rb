@@ -8,4 +8,14 @@ class Order < ActiveRecord::Base
   def buy?
     !@sell
   end
+
+  def update_account
+      if buy?
+        account.balance -= price
+      else
+        account.balance += price
+      end
+
+      account.save
+  end
 end
