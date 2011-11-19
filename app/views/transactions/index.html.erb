@@ -1,0 +1,21 @@
+<% title "Transactions" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Stock</th>
+  </tr>
+  <% for transaction in @transactions %>
+    <tr>
+      <td><%= transaction.id %></td>
+      <td><%= transaction.orders.first.price %></td>
+      <td><%= transaction.orders.first.stock.name %></td>
+      <!-- <td><%= link_to "Show", transaction %></td> -->
+      <td><%= link_to "Edit", edit_transaction_path(transaction) %></td>
+      <td><%= link_to "Destroy", transaction, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Transaction", new_transaction_path %></p>

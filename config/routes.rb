@@ -1,4 +1,6 @@
 SzarHazi::Application.routes.draw do
+  resources :transactions
+
   resources :orders
 
   resources :accounts
