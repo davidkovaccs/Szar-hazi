@@ -9,6 +9,11 @@ user:
  * megbizasnak lejarati idot adni, majd torolni
  * arfolyam szamitas (david)
  * grafikon megjelenites (david)
+ * grafikon kivalasztasa a bal oldali reszveny tablazatbol
+ * osszerakni a fooldal aljara a tablazatot
+ * ha nincs account hibauzenetet megjeleniteni
+ * megbizast csak ket kulonbozo szamlarol lehessen ugylette formalni
+
 
 broker:
  * 
