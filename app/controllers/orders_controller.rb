@@ -26,6 +26,7 @@ class OrdersController < ApplicationController
         @order.update_account
       end
 
+      # ugylet letrehozasa
       if ord
         Rails.logger.info "ASDFASDFASDFASDF"
         trans = Transaction.new
@@ -40,6 +41,7 @@ class OrdersController < ApplicationController
         else
           @order.update_account
         end
+        @order.stock.update_price
       end
       redirect_to @order, :notice => "Successfully created order."
     else

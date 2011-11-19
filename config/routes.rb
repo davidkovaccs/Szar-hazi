@@ -1,4 +1,6 @@
 SzarHazi::Application.routes.draw do
+  devise_for :users
+
   resources :transactions
 
   resources :orders
@@ -7,9 +9,7 @@ SzarHazi::Application.routes.draw do
 
   resources :stocks
 
-  devise_for :users
-
-   root :to => "home#index"
+  root :to => "home#index"
 
   match 'show_accounts' => 'home#show_accounts'
   match 'show_orders' => 'home#show_orders'

@@ -14,3 +14,30 @@
   float: left;
   padding-right: 20px;
 }
+
+#upper
+{
+  background-color: red;
+  height: 400px;
+}
+
+#stocks
+{
+  background-color: green;
+  height: 400px;
+  width: 250px;
+  float: left;
+}
+
+#prices
+{
+  background-color: yellow;
+  height: 400px;
+  width: 936px;
+}
+
+#lower
+{
+  background-color: purple;
+  height: 200px;
+}

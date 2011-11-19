@@ -1,0 +1,13 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+  </tr>
+  <% for stock in Stock.all %>
+    <tr>
+      <td><%= stock.name %></td>
+      <td><%= stock.price %></td>
+    </tr>
+  <% end %>
+</table>
+
