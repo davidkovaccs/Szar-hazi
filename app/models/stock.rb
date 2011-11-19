@@ -1,10 +1,10 @@
 class Stock < ActiveRecord::Base
   attr_accessible :name, :price
-
-  def update_price
-    self.price = 0
+  
+  def price
+    p = 0
     i = 0
-    Rails.logger.info 'PRICE UPDATE FROM:' + self.price.to_s
+
     Transaction.all.map { |trans|
         order = trans.orders.first
         if !order then
@@ -13,14 +13,15 @@ class Stock < ActiveRecord::Base
 
         if order.stock.id == id then
           Rails.logger.info 'ASDF'
-          self.price += order.price
+          p += order.price
           i += 1
         end
+        if (i >= 5) then break end
     }
 
-    self.price /= i
-    Rails.logger.info 'PRICE UPDATED TO: ' + self.price.to_s
+    if i != 0 then p /= i else 0 end
+  end
 
-    self.save
+  def update_price
   end
 end

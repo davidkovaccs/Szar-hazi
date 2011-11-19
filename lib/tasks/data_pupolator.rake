@@ -31,7 +31,7 @@ namespace :db do
                    )
       end
       50.times do |n|
-        Transaction.create!( :created_at => (n / 5).days.ago )
+        Transaction.create!( :created_at => (9 - (n / 5)).days.ago )
       end
   end
 end
