@@ -12,7 +12,7 @@
     <%= yield(:head) %>
   </head>
   <body>
-    <h1>Tőzsdei kereskedő rendszer</h1>
+    <h1 id="logo">Tőzsdei kereskedő rendszer</h1>
     <div id="user_nav">
       <% if user_signed_in? %>
         <table>
@@ -38,7 +38,7 @@
         <div id="menu">
           <ul>
             <li><%= link_to "Kezdőlap", '/' %></li>
-            <li><%= link_to "Számlák", "/show_accounts" %></li>
+            <li><%= link_to "Számlák", :controller => 'accounts', :action => 'index' %></li>
             <li><%= link_to "Új Megbízás", :controller => 'orders', :action => 'new' %></li>
             <li><%= link_to "Megbízások", :controller => 'orders', :action => 'index' %></li>
             <li><%= link_to "Ügyletek", :controller => 'transactions', :action => 'index' %></li>

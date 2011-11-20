@@ -15,6 +15,8 @@ SzarHazi::Application.routes.draw do
 
   root :to => "home#index"
 
+  match 'buy' => 'home#buy'
+  match 'sell' => 'home#sell'
   match 'show_accounts' => 'home#show_accounts'
   match 'show_orders' => 'home#show_orders'
   match 'new_order' => 'home#new_order'
@@ -45,7 +47,7 @@ SzarHazi::Application.routes.draw do
   #     end
   #   end
 
-  # Sample resource route with sub-resources:
+    # Sample resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
   #     resource :seller

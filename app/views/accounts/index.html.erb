@@ -1,19 +1,22 @@
-<% title "Accounts" %>
+<% title "Számláim" %>
 
 <table>
   <tr>
-    <th>User</th>
+    <th>Name</th>
     <th>Balance</th>
+    <th>Active</th>
   </tr>
-  <% for account in @accounts %>
+  <% for account in current_user.accounts %>
     <tr>
-      <td><%= account.user_id %></td>
+      <td><%= account.name %></td>
       <td><%= account.balance %></td>
-      <td><%= link_to "Show", account %></td>
-      <td><%= link_to "Edit", edit_account_path(account) %></td>
-      <td><%= link_to "Destroy", account, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= account.active %></td>
+      <!-- <td><%= link_to "Show", account %></td> -->
+      <td><%= link_to "Activálás", :controller => "accounts", :action =>  'activate', :id => account.id %></td>
+      <td><%= link_to "Módosítás", edit_account_path(account) %></td>
+      <td><%= link_to "Törlés", account, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>
 
-<p><%= link_to "New Account", new_account_path %></p>
+<p><%= link_to "Új számla létrehozása", new_account_path %></p>
