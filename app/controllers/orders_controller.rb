@@ -1,7 +1,8 @@
 class OrdersController < ApplicationController
   def index
     if current_user.accounts.empty? then
-      flash[:alert] = "Nincs még számlája, hozzon létre egyet, hogy megbízást tudjon kötni."
+#      flash[:alert] = "Nincs még számlája, hozzon létre egyet, hogy megbízást tudjon kötni."
+      flash[:alert] = "nn"
       redirect_to :controller => "accounts", :action => 'new'
       return
     end
@@ -11,7 +12,8 @@ class OrdersController < ApplicationController
 
   def show
     if current_user.accounts.empty? then
-      flash[:alert] = "Nincs még számlája, hozzon létre egyet, hogy megbízást tudjon kötni."
+#       flash[:alert] = "Nincs még számlája, hozzon létre egyet, hogy megbízást tudjon kötni."
+      flash[:alert] = "nn"
       redirect_to :controller => "accounts", :action => 'new'
       return
     end
@@ -20,7 +22,8 @@ class OrdersController < ApplicationController
 
   def new
     if current_user.accounts.empty? then
-      flash[:alert] = "Nincs még számlája, hozzon létre egyet, hogy megbízást tudjon kötni."
+#       flash[:alert] = "Nincs még számlája, hozzon létre egyet, hogy megbízást tudjon kötni."
+      flash[:alert] = "nn"
       redirect_to :controller => "accounts", :action => 'new'
       return
     end
