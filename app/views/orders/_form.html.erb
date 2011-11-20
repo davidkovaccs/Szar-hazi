@@ -3,7 +3,7 @@
       if current_user.accounts.find_by_active(1)
         selected = current_user.accounts.find_by_active(1).id
        else
-        selected = 1
+        selected = current_user.accounts.first
       end
     %>
 

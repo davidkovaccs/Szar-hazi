@@ -1,10 +1,27 @@
 <div id="bigbox">
   <div id="upper">
     <div id="stocks">
-      <%= render "stocks" %>
+      <div id="buttons_to_buy">
+      </div>
+      <div>
+        <%= render "stocks" %>
+      </div>
     </div>
     <div id="prices">
-      <%= render "pricegraph" %>
+      <h1><%= Stock.find(@stock_id).name %></h1>
+      <% 
+      if current_user.accounts.empty?
+        selected = "Nincs számlája"
+      elsif current_user.accounts.find_by_active(1)
+        selected = current_user.accounts.find_by_active(1).name
+      else
+        selected = current_user.accounts.first.name
+      end
+      %>
+      <p id="active_account">Aktív számla: <%= selected %></p>
+      <div>
+        <%= render "pricegraph" %>
+      </div>
     </div>
   </div>
   <div id="lower">
