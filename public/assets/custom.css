@@ -52,11 +52,16 @@
   height: 300px;
 }
 
-#stocks
+#leftside
 {
   height: 300px;
   width: 185px;
   float: left;
+}
+
+#stocks
+{
+  height: 300px;
   overflow: auto;
 }
 
@@ -89,4 +94,19 @@
 #lower td {
   padding-right: 40px;
   padding-left: 40px;
+}
+
+#buttons_to_buy
+{
+  display: inline;
+  float: none;
+}
+
+.sell_button {
+}
+
+.buy_button {
+  float: left;
+  padding-right: 20px;
+  padding-left: 10px;
 }

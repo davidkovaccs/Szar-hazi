@@ -1,9 +1,11 @@
 <div id="bigbox">
   <div id="upper">
-    <div id="stocks">
+    <div id="leftside">
       <div id="buttons_to_buy">
+        <%= button_to 'Vétel', {:action => 'buy', :stock_id => @stock_id}, :form_class => 'buy_button' %>
+        <%= button_to 'Eladás', {:action => 'sell', :stock_id => @stock_id}, :form_class => 'sell_button' %>
       </div>
-      <div>
+      <div id="stocks">
         <%= render "stocks" %>
       </div>
     </div>
@@ -19,7 +21,7 @@
       end
       %>
       <p id="active_account">Aktív számla: <%= selected %></p>
-      <div>
+        <div>
         <%= render "pricegraph" %>
       </div>
     </div>
