@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class Order < ActiveRecord::Base
   attr_accessible :account_id, :stock_id, :price, :sell, :transaction_id
   

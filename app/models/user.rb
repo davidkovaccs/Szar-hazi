@@ -8,4 +8,10 @@ class User < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :remember_me
 
   has_many :accounts
+  
+  has_and_belongs_to_many :roles
+  
+  def role?(role)
+    return !!self.roles.find_by_name(role)
+  end
 end
