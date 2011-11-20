@@ -2,15 +2,6 @@
   <div id="upper">
     <div id="leftside">
       <div id="buttons_to_buy">
-        <%= button_to 'Vétel', {:action => 'buy', :stock_id => @stock_id}, :form_class => 'buy_button' %>
-        <%= button_to 'Eladás', {:action => 'sell', :stock_id => @stock_id}, :form_class => 'sell_button' %>
-      </div>
-      <div id="stocks">
-        <%= render "stocks" %>
-      </div>
-    </div>
-    <div id="prices">
-      <h1><%= Stock.find(@stock_id).name %></h1>
       <% 
       if current_user.accounts.empty?
         selected = "Nincs számlája"
@@ -20,6 +11,15 @@
         selected = current_user.accounts.first.name
       end
       %>
+        <%= button_to 'Vétel', {:controller => 'orders', :action => 'create', :order => {:stock_id => @stock_id, :sell => '0', :price => Stock.find(@stock_id).price, :account_id => current_user.accounts.first.id }}, :form_class => 'buy_button' %>
+        <%= button_to 'Eladás', {:controller => 'orders', :action => 'create', :order => {:stock_id => @stock_id, :sell => '1', :price => Stock.find(@stock_id).price, :account_id => current_user.accounts.first.id }}, :form_class => 'sell_button' %>
+      </div>
+      <div id="stocks">
+        <%= render "stocks" %>
+      </div>
+    </div>
+    <div id="prices">
+      <h1><%= Stock.find(@stock_id).name %></h1>
       <p id="active_account">Aktív számla: <%= selected %></p>
         <div>
         <%= render "pricegraph" %>

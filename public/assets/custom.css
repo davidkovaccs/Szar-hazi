@@ -39,6 +39,7 @@
 #menu ul
 {
   list-style-type: none;
+  padding: 0px;
 }
 
 #menu li
@@ -52,6 +53,11 @@
   height: 300px;
 }
 
+#logo
+{
+  padding-left: 120px;
+}
+
 #leftside
 {
   height: 300px;
@@ -63,6 +69,12 @@
 {
   height: 300px;
   overflow: auto;
+}
+
+#stocks td
+{
+  padding-left: 13px;
+  padding-right: 13px;
 }
 
 #prices
@@ -108,5 +120,5 @@
 .buy_button {
   float: left;
   padding-right: 20px;
-  padding-left: 10px;
+  padding-left: 20px;
 }

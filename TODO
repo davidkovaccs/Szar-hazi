@@ -1,5 +1,6 @@
 fix:
  * torles megjavitasa mindenhol
+ * csak olyan megbizasokat lehessen torolni ami meg nem ugylet
 
 enh:
 
@@ -8,7 +9,6 @@ enh:
 user:
  * megbizasnak lejarati idot adni, majd torolni
  * megbizast csak ket kulonbozo szamlarol lehessen ugylette formalni
- * eladas/vetel gomb a fooldalra
  * aktualis instrumentum kijelolese a bal oldali boxban
  * diagram x,y tengelyere szmaokat irogatni
 
