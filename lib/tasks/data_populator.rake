@@ -13,13 +13,13 @@ namespace :db do
       120.times do |n|
         first_name  = Faker::Name.first_name
         last_name = Faker::Name.last_name
-        email = first_name + last_name + "@test.hu"
+        email = "user#{n+1}" + "@test.hu"
         password  = "password"
-        if n < 102
+        if n < 100
           role = "user"
-        elsif n < 112
+        elsif n < 110
           role = "broker"
-        else n < 122
+        else n < 120
           role = "admin"
         end
         
@@ -30,6 +30,7 @@ namespace :db do
                    :password_confirmation => password)
         user.roles = [Role.find_by_name(role)]
       end
+
       100.times do |n|
         name  = "Account#{n+1}"
         Account.create!(:name => name,
@@ -37,7 +38,7 @@ namespace :db do
                         :user_id => n+1
                    )
       end
-      5.times do |n|
+      30.times do |n|
         name  = "Stock#{n+1}"
         Stock.create!(  :name => name )
       end
@@ -50,10 +51,26 @@ namespace :db do
                    )
       end
       50.times do |n|
-        Transaction.create!( :created_at => (n / 5).days.ago )
+        Transaction.create!( :created_at => (9 - (n / 5)).days.ago,
+                        :stock_id => 1,
+                        :price => (n*2+2)/2*100
+                  )
       end
-      
-      
-  
+      price = Array.new
+      100.times do |n|
+        if n % 2 == 0 then price[n/2] = rand(1000) end
+        Order.create!(  :account_id => n+1,
+                        :stock_id => 2,
+                        :price => price[n/2],
+                        :sell => n % 2,
+                        :transaction_id => (n + 100 + 2)/2
+                   )
+      end
+      50.times do |n|
+        Transaction.create!(
+                        :stock_id => 2,
+                        :price => price[n],
+                        :created_at => (9 - (n / 5)).days.ago)
+      end
   end
 end
