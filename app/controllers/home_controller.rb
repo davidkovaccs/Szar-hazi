@@ -2,10 +2,14 @@
 class HomeController < ApplicationController
   before_filter :authenticate_user!
   def index
-    if params[:stock] then
-      @stock_id = params[:stock]
+    if current_user.role? :user || :broker
+      if params[:stock] then
+        @stock_id = params[:stock]
+      else
+        @stock_id = 1
+      end
     else
-      @stock_id = 1
+       redirect_to :controller => "users", :action => 'index'
     end
   end
 

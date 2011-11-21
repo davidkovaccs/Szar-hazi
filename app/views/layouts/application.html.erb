@@ -37,12 +37,18 @@
       <% if user_signed_in? %>
         <div id="menu">
           <ul>
-            <li><%= link_to "Kezdőlap", '/' %></li>
-            <li><%= link_to "Számlák", :controller => 'accounts', :action => 'index' %></li>
-            <li><%= link_to "Új Megbízás", :controller => 'orders', :action => 'new' %></li>
-            <li><%= link_to "Megbízások", :controller => 'orders', :action => 'index' %></li>
-            <li><%= link_to "Ügyletek", :controller => 'transactions', :action => 'index' %></li>
-          </ul>
+          	<% if current_user.role? :user || :broker  %>
+              <li><%= link_to "Kezdőlap", '/' %></li>
+              <li><%= link_to "Számlák", :controller => 'accounts', :action => 'index' %></li>
+              <li><%= link_to "Új Megbízás", :controller => 'orders', :action => 'new' %></li>
+              <li><%= link_to "Megbízások", :controller => 'orders', :action => 'index' %></li>
+              <li><%= link_to "Ügyletek", :controller => 'transactions', :action => 'index' %></li>
+          	<% end %>
+			<% if current_user.role? :admin  %>
+              <li><%= link_to "Felhasználók", :controller => 'users', :action => 'index' %></li>
+              <li><%= link_to "Számlák", :controller => 'accounts', :action => 'list' %></li>
+          	<% end %>
+		  </ul>
         </div>
         <br/>
         <br/>

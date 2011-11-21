@@ -3,6 +3,8 @@ SzarHazi::Application.routes.draw do
 
   get "users/show"
 
+  get "accounts/list"
+  
   devise_for :users
   resources :users, :only => [:index, :show]
   resources :transactions

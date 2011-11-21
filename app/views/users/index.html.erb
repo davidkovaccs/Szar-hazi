@@ -1,8 +1,15 @@
 <h1>Users</h1>
 <table>
+  <tr>
+	<th>E-mail address</th>
+	<th>First name</th>
+	<th>Last name</th>
+  </tr>
 <% @users.each do |user| %>
   <tr>
     <td><%= link_to user.email, user %></td>
+	<td><%= user.first_name %></td>
+	<td><%= user.last_name %></td>
   </tr>
 <% end %>
 </table>
