@@ -4,7 +4,7 @@ fix:
 
 enh:
 
- * authorizacio, roleok
+ * authorizacio, roleok  (készül - Pali)
 
 user:
  * megbizasnak lejarati idot adni, majd torolni
@@ -18,4 +18,4 @@ broker:
  * ugyfelek megbizasainak listazasa
 
 admin:
- * felhasznalom menedzselese
+ * felhasznalom menedzselese (készül - Pali)
