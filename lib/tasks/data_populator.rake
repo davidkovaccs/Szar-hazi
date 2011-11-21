@@ -10,18 +10,25 @@ namespace :db do
       role = "user"
       Role.create!(:name => role)
       
-      100.times do |n|
+      120.times do |n|
         first_name  = Faker::Name.first_name
         last_name = Faker::Name.last_name
         email = first_name + last_name + "@test.hu"
         password  = "password"
-        role = "user"
+        if n < 102
+          role = "user"
+        elsif n < 112
+          role = "broker"
+        else n < 122
+          role = "admin"
+        end
+        
         user = User.create!(:first_name => first_name,
                     :last_name => last_name,
                    :email => email,
                    :password => password,
                    :password_confirmation => password)
-         user.roles.create!(:name => role)
+        user.roles = [Role.find_by_name(role)]
       end
       100.times do |n|
         name  = "Account#{n+1}"
