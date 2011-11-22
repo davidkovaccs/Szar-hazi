@@ -2,9 +2,11 @@
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Price</th>
-    <th>Stock</th>
+    <th>Azonositó</th>
+    <th>Ár</th>
+    <th>Részvény</th>
+	<th>Eladó</th>
+    <th>Vevő</th>
   </tr>
   <%
     transactions = Array.new
@@ -19,6 +21,8 @@
       <td><%= transaction.id %></td>
       <td><%= transaction.orders.first.price %></td>
       <td><%= transaction.orders.first.stock.name %></td>
+	  <td><%= transaction.orders.first.account.user.last_name %></td>
+	  <td><%= transaction.orders.second.account.user.last_name %></td>
       <!-- <td><%= link_to "Show", transaction %></td> -->
     </tr>
   <% end %>
