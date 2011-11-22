@@ -10,6 +10,12 @@
     <td><%= link_to user.email, user %></td>
 	<td><%= user.first_name %></td>
 	<td><%= user.last_name %></td>
+	<td>
+	  <%= link_to "Szerkesztés", user, :method => :edit %>
+  	</td>
+	<td>
+	  <%= link_to "Törlés", user, :confirm => 'Are you sure?', :method => :delete %>
+  	</td>
   </tr>
 <% end %>
 </table>
