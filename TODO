@@ -8,7 +8,8 @@ enh:
 
 user:
  * megbizasnak lejarati idot adni, majd torolni
- * megbizast csak ket kulonbozo szamlarol lehessen ugylette formalni
+ * megbizast csak ket kulonbozo szamlarol lehessen ugylette formalni DONE
+ 			(két különböző számla helyett két különbző user szerintem inkább, de átirhatjuk később)
  * aktualis instrumentum kijelolese a bal oldali boxban
  * diagram x,y tengelyere szmaokat irogatni
 

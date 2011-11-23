@@ -39,14 +39,16 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(params[:order])
-
+    
+    @order.user_id = current_user.id;
+    
     if @order.buy? and params[:order][:price].to_i > @order.account.balance
       flash[:alert] = "Nincs eleg penz a '" + @order.account.name + "' szamlan"
       redirect_to :action => 'new'
       return
     end
 
-    ord = Order.find(:first, :conditions => ["stock_id = ? and price = ? and sell != ?", @order.stock_id, @order.price, @order.sell])
+    ord = Order.find(:first, :conditions => ["stock_id = ? and price = ? and sell != ? and user_id <> ?", @order.stock_id, @order.price, @order.sell, @order.account.user.id])
     if @order.save
       if @order.buy?
         @order.update_account
