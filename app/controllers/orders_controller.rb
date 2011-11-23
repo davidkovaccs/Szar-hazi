@@ -81,6 +81,9 @@ class OrdersController < ApplicationController
 
   def edit
     @order = Order.find(params[:id])
+    if !@order.transaction_id.nil?
+       redirect_to :controller => "orders", :action => 'index'
+    end
   end
 
   def update

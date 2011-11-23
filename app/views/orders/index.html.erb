@@ -18,8 +18,12 @@
       <td><%= order.price %></td>
       <td><%= order.sell %></td>
       <!-- <td><%= link_to "Show", order %></td> -->
-      <td><%= link_to "Szerkesztés", edit_order_path(order) %></td>
-      <td><%= link_to "Törlés", order, :confirm => 'Are you sure?', :method => :delete %></td>
+	  <% if order.transaction_id.nil? %>
+      	<td><%= link_to "Szerkesztés", edit_order_path(order) %></td>
+      	<td><%= link_to "Törlés", order, :confirm => 'Are you sure?', :method => :delete %></td>
+	  <% else %>
+	  	<td>Tranzakció létrejött</td>
+	  <% end %>
     </tr>
   <% end %>
 </table>
