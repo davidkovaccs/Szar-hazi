@@ -17,12 +17,12 @@
       <% if user_signed_in? %>
         <table>
         <tr>
-          <td> Üdvözöljük <%= current_user.email %>! </td>
-          <td> <%= link_to "Sign out", destroy_user_session_path, :method => :delete %> </td>
+          <td> Üdvözöljük <%= current_user.first_name + " " + current_user.last_name + "! (" + current_user.email + ") " %> </td>
+          <td> <%= link_to "Kilépés", destroy_user_session_path, :method => :delete %> </td>
         </tr>
         </table>
       <% else %>
-        <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+        <%= link_to "Regisztráció", new_user_registration_path %> or <%= link_to "Belépés", new_user_session_path %>
       <% end %>
     </div>
 
