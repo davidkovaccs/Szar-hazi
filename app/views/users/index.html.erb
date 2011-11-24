@@ -14,8 +14,15 @@
 	  <%= link_to "Szerkesztés", user, :method => :edit %>
   	</td>
 	<td>
-	  <%= link_to "Törlés", user, :confirm => 'Are you sure?', :method => :delete %>
+	  <%= link_to "Törlés", user, :confirm => 'Are you sure?', :method => :destroy %>
   	</td>
+	<td>
+	  <% if user.active == 1 %>
+	    <%= link_to "Felfüggesztés", :controller => "users", :action =>  'deactivate', :id => user.id %>
+  	  <% else %>
+	    <%= link_to "Aktiválás", :controller => "users", :action =>  'activate', :id => user.id %>
+	  <% end %>
+	</td>
   </tr>
 <% end %>
 </table>

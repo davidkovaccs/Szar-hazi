@@ -23,6 +23,8 @@ SzarHazi::Application.routes.draw do
   match 'show_orders' => 'home#show_orders'
   match 'new_order' => 'home#new_order'
   match 'accounts/:id/activate' => 'accounts#activate'
+  match 'users/:id/activate' => 'users#activate'
+  match 'users/:id/deactivate' => 'users#deactivate'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
