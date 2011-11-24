@@ -15,4 +15,16 @@ class User < ActiveRecord::Base
   def role?(role)
     return !!self.roles.find_by_name(role)
   end
+  
+  def active_for_authentication? 
+    super && active? 
+  end 
+
+  def inactive_message 
+    if !active? 
+      :inactive 
+    else 
+      super # Use whatever other message 
+    end 
+  end
 end
