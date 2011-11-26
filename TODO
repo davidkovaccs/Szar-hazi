@@ -14,9 +14,11 @@ user:
  * diagram x,y tengelyere szmaokat irogatni
 
 broker:
- * ugyfelek listazasa
- * ugyfelek ugyleteinek listazasa
- * ugyfelek megbizasainak listazasa
+ * ugyfelek listazasa DONE
+ * ugyfelek ugyleteinek listazasa	DONE
+ * ugyfelek megbizasainak listazasa	DONE
 
 admin:
- * felhasznalom menedzselese (készül - Pali)
+ * felhasznalom menedzselese
+	Kész: userek listázása, userek aktiválása
+	Todo: user részletes adatai, userek adatainak szerkesztése?

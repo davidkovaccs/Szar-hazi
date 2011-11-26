@@ -8,6 +8,11 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.find(params[:id])
   end
 
+  def list
+    @transactions = Transaction.all
+    @user = User.find(params[:id])
+  end
+
   def new
     @transaction = Transaction.new
   end

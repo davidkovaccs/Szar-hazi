@@ -12,6 +12,11 @@ class OrdersController < ApplicationController
     @orders = Order.all
   end
 
+  def list
+    @orders = Order.all
+    @user = User.find(params[:id])
+  end
+
   def show
     if current_user.accounts.empty? then
 #       flash[:alert] = "Nincs még számlája, hozzon létre egyet, hogy megbízást tudjon kötni."

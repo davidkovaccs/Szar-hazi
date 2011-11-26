@@ -10,19 +10,37 @@
     <td><%= link_to user.email, user %></td>
 	<td><%= user.first_name %></td>
 	<td><%= user.last_name %></td>
-	<td>
-	  <%= link_to "Szerkesztés", user, :method => :edit %>
-  	</td>
-	<td>
-	  <%= link_to "Törlés", user, :confirm => 'Are you sure?', :method => :destroy %>
-  	</td>
-	<td>
-	  <% if user.active == 1 %>
-	    <%= link_to "Felfüggesztés", :controller => "users", :action =>  'deactivate', :id => user.id %>
-  	  <% else %>
-	    <%= link_to "Aktiválás", :controller => "users", :action =>  'activate', :id => user.id %>
-	  <% end %>
-	</td>
+	<% if current_user.role? :admin  %>
+          	
+		<td>
+		  <%= link_to "Szerkesztés", user, :method => :edit %>
+	  	</td>
+		<td>
+		  <%= link_to "Törlés", user, :confirm => 'Are you sure?', :method => :destroy %>
+	  	</td>
+		<td>
+		  <% if user.active == 1 %>
+		    <%= link_to "Felfüggesztés", :controller => "users", :action =>  'deactivate', :id => user.id %>
+	  	  <% else %>
+		    <%= link_to "Aktiválás", :controller => "users", :action =>  'activate', :id => user.id %>
+		  <% end %>
+		</td>
+		
+	<% end %>
+	<% if current_user.role? :broker  %>
+          	
+		<td>
+		  <%= link_to "Számlák", :controller => "accounts", :action => 'list', :id => user.id %>
+	  	</td>
+		<td>
+		  <%= link_to "Megbízások", :controller => "orders", :action => 'list', :id => user.id %>
+	  	</td>
+		<td>
+		  <%= link_to "Ügyletek", :controller => "transactions", :action => 'list', :id => user.id %>
+	  	</td>
+		
+	<% end %>
+	
   </tr>
 <% end %>
 </table>

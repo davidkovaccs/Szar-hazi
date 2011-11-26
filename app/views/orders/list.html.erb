@@ -1,0 +1,29 @@
+<% title "Megbízások" %>
+
+<table>
+  <tr>
+    <th>Account</th>
+    <th>Stock</th>
+    <th>Price</th>
+    <th>Sell</th>
+  </tr>
+  <%
+    orders = Array.new
+    @user.accounts.map {|acc| orders = orders | acc.orders }
+  %>
+  <% for order in orders %>
+    <tr>
+      <td><%= order.account.name %></td>
+      <td><%= order.stock.name %></td>
+      <td><%= order.price %></td>
+      <td><%= order.sell %></td>
+      <!-- <td><%= link_to "Show", order %></td> -->
+	  <% if order.transaction_id.nil? %>
+      	<td><%= link_to "Szerkesztés", edit_order_path(order) %></td>
+      	<td><%= link_to "Törlés", order, :confirm => 'Are you sure?', :method => :delete %></td>
+	  <% else %>
+	  	<td>Tranzakció létrejött</td>
+	  <% end %>
+    </tr>
+  <% end %>
+</table>

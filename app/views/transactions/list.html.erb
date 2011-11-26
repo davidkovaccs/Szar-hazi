@@ -1,0 +1,29 @@
+<% title "Ügyletek" %>
+
+<table>
+  <tr>
+    <th>Azonositó</th>
+    <th>Ár</th>
+    <th>Részvény</th>
+	<th>Eladó</th>
+    <th>Vevő</th>
+  </tr>
+  <%
+    transactions = Array.new
+    @user.accounts.map { | account |
+      account.orders.map { | order |
+        if order.transaction then transactions = transactions | [order.transaction] end
+      }
+    }
+  %>
+  <% for transaction in  transactions %>
+    <tr>
+      <td><%= transaction.id %></td>
+      <td><%= transaction.orders.first.price %></td>
+      <td><%= transaction.orders.first.stock.name %></td>
+	  <td><%= transaction.orders.first.account.user.last_name %></td>
+	  <td><%= transaction.orders.second.account.user.last_name %></td>
+      <!-- <td><%= link_to "Show", transaction %></td> -->
+    </tr>
+  <% end %>
+</table>
