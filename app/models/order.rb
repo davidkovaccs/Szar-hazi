@@ -15,7 +15,7 @@ class Order < ActiveRecord::Base
   end
 
   def buy?
-    !@sell
+    return !sell? 
   end
 
   def update_account
