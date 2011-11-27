@@ -14,11 +14,11 @@
 </p>
 <p>
   <strong>Típus:</strong>
-  <%= @order.sell %>
+  <%= @order.print_type %>
 </p>
 
 <p>
-  <%= link_to "Edit", edit_order_path(@order) %> |
-  <%= link_to "Destroy", @order, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", orders_path %>
+  <%= link_to "Szerkesztés", edit_order_path(@order) %> |
+  <%= link_to "Törlés", @order, :confirm => 'Biztosan?', :method => :delete %> |
+  <%= link_to "Összes megtekintése", orders_path %>
 </p>

@@ -1,9 +1,9 @@
-<h1>Users</h1>
+<h1>Felhasználók</h1>
 <table>
   <tr>
-	<th>E-mail address</th>
-	<th>First name</th>
-	<th>Last name</th>
+	<th>E-mail cím</th>
+	<th>Előnév</th>
+	<th>Utónév</th>
   </tr>
 <% @users.each do |user| %>
   <tr>
@@ -16,7 +16,7 @@
 		  <%= link_to "Szerkesztés", user, :method => :edit %>
 	  	</td>
 		<td>
-		  <%= link_to "Törlés", user, :confirm => 'Are you sure?', :method => :destroy %>
+		  <%= link_to "Törlés", user, :confirm => 'Biztosan?', :method => :destroy %>
 	  	</td>
 		<td>
 		  <% if user.active == 1 %>

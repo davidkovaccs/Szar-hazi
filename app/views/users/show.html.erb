@@ -1,2 +1,16 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>Felhasználó</h1>
+<% title "Részvény" %>
+
+<p>
+  <strong>Előnév:</strong>
+  <%= @user.first_name %>
+</p>
+<p>
+  <strong>Utónév:</strong>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <strong>E-mail cím:</strong>
+  <%= @user.email %>
+</p>
