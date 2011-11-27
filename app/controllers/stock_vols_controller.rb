@@ -33,7 +33,6 @@ class StockVolsController < ApplicationController
     if @stock_vol.update_attributes(params[:stock_vol])
       redirect_to @stock_vol
     else
-    else
       render :action => 'edit'
     end
   end
