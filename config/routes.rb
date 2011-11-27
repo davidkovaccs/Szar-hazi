@@ -3,6 +3,8 @@ SzarHazi::Application.routes.draw do
 
   get "users/index"
 
+  match 'users/:id' => 'users#show'
+
   get "users/show"
 
   get "accounts/list"
@@ -33,6 +35,7 @@ SzarHazi::Application.routes.draw do
   match 'accounts/:id/activate' => 'accounts#activate'
   match 'users/:id/activate' => 'users#activate'
   match 'users/:id/deactivate' => 'users#deactivate'
+  match 'users/:id/edit' => 'users#edit'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

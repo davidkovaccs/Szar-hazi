@@ -1,0 +1,12 @@
+<% title "Felhasznalok" %>
+
+<%= render 'form' %>
+
+<p>
+  <%= link_to "Megtekintés", @user %> |
+		  <% if @user.active == 1 %>
+		    <%= link_to "Felfüggesztés", :controller => "users", :action =>  'deactivate', :id => @user.id %>
+	  	  <% else %>
+		    <%= link_to "Aktiválás", :controller => "users", :action =>  'activate', :id => @user.id %>
+		  <% end %>
+</p>
