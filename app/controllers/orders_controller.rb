@@ -1,6 +1,8 @@
 # encoding: UTF-8
 class OrdersController < ApplicationController
   before_filter :authenticate_user!
+  load_and_authorize_resource
+
   def index
     if current_user.accounts.empty? then
 #      flash[:alert] = "Nincs még számlája, hozzon létre egyet, hogy megbízást tudjon kötni."
