@@ -18,11 +18,11 @@ class Ability
       can [:index, :show, :update, :edit], Order do |order|
         order.account.try(:user) == user
       end
-      can [:new, :create], Order do |oredr|
+      can [:new, :create], Order do |order|
         true
       end
       can [:delete], Order do |order|
-        order.account.try(:user) == user
+        true
       end
      
       can [:index, :show], Transaction do |transaction|
