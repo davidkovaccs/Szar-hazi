@@ -156,6 +156,15 @@ class OrdersController < ApplicationController
 
   def destroy
     @order = Order.find(params[:id])
+    if @order.transaction
+      flash[:alert] = "Olyan ügyletet nem tudsz törölni amiből már létrejött egy tranzakció."
+      render :action => 'index'
+      return
+    end
+    if @order.buy?
+      @order.account.balance += @order.price
+      @order.account.save
+    end
     @order.destroy
     redirect_to orders_url, :notice => "Megbízás sikeresen törölve."
   end
