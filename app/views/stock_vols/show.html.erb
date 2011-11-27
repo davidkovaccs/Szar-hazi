@@ -1,0 +1,20 @@
+<% title "Stock Vol" %>
+
+<p>
+  <strong>Account:</strong>
+  <%= @stock_vol.account_id %>
+</p>
+<p>
+  <strong>Volume:</strong>
+  <%= @stock_vol.volume %>
+</p>
+<p>
+  <strong>Stock:</strong>
+  <%= @stock_vol.stock_id %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_stock_vol_path(@stock_vol) %> |
+  <%= link_to "Destroy", @stock_vol, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", stock_vols_path %>
+</p>

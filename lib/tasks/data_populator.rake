@@ -21,13 +21,16 @@ namespace :db do
           role = "broker"
         else n < 120
           role = "admin"
+          active = 1
         end
         
         user = User.create!(:first_name => first_name,
                     :last_name => last_name,
                    :email => email,
                    :password => password,
-                   :password_confirmation => password)
+                   :password_confirmation => password,
+                   :active => 1
+                  )
         user.roles = [Role.find_by_name(role)]
       end
 
@@ -51,6 +54,12 @@ namespace :db do
                    )
       end
       50.times do |n|
+        StockVol.create!( :account_id => (n*2)+1,
+                        :stock_id => 1,
+                        :volume => 1
+                  )
+      end
+      50.times do |n|
         Transaction.create!( :created_at => (9 - (n / 5)).days.ago,
                         :stock_id => 1,
                         :price => (n*2+2)/2*100
@@ -71,6 +80,12 @@ namespace :db do
                         :stock_id => 2,
                         :price => price[n],
                         :created_at => (9 - (n / 5)).days.ago)
+      end
+      50.times do |n|
+        StockVol.create!( :account_id => (n*2)+1,
+                        :stock_id => 2,
+                        :volume => 1
+                  )
       end
   end
 end

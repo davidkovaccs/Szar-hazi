@@ -1,0 +1,16 @@
+<%= form_for @stock_vol do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :account_id %><br />
+    <%= f.number_field :account_id %>
+  </p>
+  <p>
+    <%= f.label :volume %><br />
+    <%= f.number_field :volume %>
+  </p>
+  <p>
+    <%= f.label :stock_id %><br />
+    <%= f.number_field :stock_id %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

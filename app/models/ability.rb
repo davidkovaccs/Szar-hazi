@@ -8,8 +8,33 @@ class Ability
     elsif user.role? :broker
       can :manage, :all
     elsif user.role? :user
-      can :read, Account do |account|
-        account.try(:owner) == user
+      can [:index, :show, :update, :edit], Account do |account|
+        account.try(:user) == user
+      end
+      can [:new, :create], Account do |stockVol|
+        true
+      end
+
+      can [:index, :show, :update, :edit], Order do |order|
+        order.account.try(:user) == user
+      end
+      can [:new, :create], Order do |oredr|
+        true
+      end
+      can [:delete], Order do |order|
+        order.transaction.nil?
+      end
+     
+      can [:index, :show], Transaction do |transaction|
+        transaction.orders.first.account.try(:user) == user
+      end
+
+      can [:index, :show], StockVol do |stockVol|
+        stockVol.account.try(:user) == user
+      end
+
+      can [:index, :show], Stock do |stockVol|
+        true
       end
     end
   

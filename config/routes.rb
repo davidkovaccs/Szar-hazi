@@ -1,4 +1,6 @@
 SzarHazi::Application.routes.draw do
+  resources :stock_vols
+
   get "users/index"
 
   get "users/show"
