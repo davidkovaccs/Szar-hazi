@@ -1,17 +1,13 @@
 <h2>Bejelentkezés</h2>
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div class="formcontainer">
-  <div class="fieldcontainer">
-  	<%= f.label :email, :class => 'floatnone' %>
+  	
+  	<%= f.label :email%>
     <%= f.label :password %>
-  </div>
-
-  <div class="floatnone">
+  
 	<%= f.email_field :email %>
   	<%= f.password_field :password %>
-  </div>
-  </div>
+
   <% if devise_mapping.rememberable? -%>
     <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
   <% end -%>
