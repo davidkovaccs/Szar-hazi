@@ -1,12 +1,11 @@
-<h1>Accounts</h1>
+<h1>Számlák</h1>
 <table>
   <tr>
-	<th>Account name</th>
-	<th>Account holder id</th>
-	<th>Account holder first name</th>
-	<th>Account holder last name</th>
-	<th>Balance</th>
-	<th>Status</th>
+	<th>Számla név</th>
+	<th>Számla tulajdonos azonsító</th>
+	<th>Számla tulajdonos előnév</th>
+	<th>Számla tulajdonos utónév</th>
+	<th>Egyenleg</th>
   </tr>
 <% @accounts.each do |account| %>
   <tr>
@@ -14,8 +13,7 @@
      <td><%= account.user_id %></td>
 	 <td><%= account.user.first_name %></td>
 	 <td><%= account.user.last_name %></td>
-	 <td><%= account.balance %></td>
-     <td><%= account.active %></td>
+	 <td><%= account.balance %></td>S
   </tr>
 <% end %>
 </table>
