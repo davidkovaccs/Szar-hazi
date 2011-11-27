@@ -21,7 +21,7 @@ class Ability
       can [:new, :create], Order do |order|
         true
       end
-      can [:delete], Order do |order|
+      can [:destroy], Order do |order|
         order.account.try(:user) == user
       end
      
