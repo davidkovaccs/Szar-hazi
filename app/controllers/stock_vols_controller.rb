@@ -1,4 +1,4 @@
- # -*- coding: utf-8 -*-
+# encoding: UTF-8
 class StockVolsController < ApplicationController
   before_filter :authenticate_user!
   load_and_authorize_resource
