@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class StockVolsController < ApplicationController
   before_filter :authenticate_user!
   load_and_authorize_resource
@@ -17,7 +18,7 @@ class StockVolsController < ApplicationController
   def create
     @stock_vol = StockVol.new(params[:stock_vol])
     if @stock_vol.save
-      redirect_to @stock_vol, :notice => "Részvény mennyiség sikeresen létrehozva."
+      redirect_to @stock_vol, ""
     else
       render :action => 'new'
     end
@@ -30,7 +31,7 @@ class StockVolsController < ApplicationController
   def update
     @stock_vol = StockVol.find(params[:id])
     if @stock_vol.update_attributes(params[:stock_vol])
-      redirect_to @stock_vol, :notice  => "Részvény mennyiség sikeresen módosítva."
+      redirect_to @stock_vol, ""
     else
       render :action => 'edit'
     end
@@ -39,6 +40,6 @@ class StockVolsController < ApplicationController
   def destroy
     @stock_vol = StockVol.find(params[:id])
     @stock_vol.destroy
-    redirect_to stock_vols_url, :notice => "Részvény mennyiség sikeresen törölve."
+    redirect_to stock_vols_url, ""
   end
 end
