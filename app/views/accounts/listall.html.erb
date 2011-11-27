@@ -9,11 +9,11 @@
   </tr>
 <% @accounts.each do |account| %>
   <tr>
-     <td><%= account.name %></td>
+         <td><%= account.name %></td>
      <td><%= account.user_id %></td>
 	 <td><%= account.user.first_name %></td>
 	 <td><%= account.user.last_name %></td>
-	 <td><%= account.balance %></td>S
+	 <td><%= account.balance %></td>
   </tr>
 <% end %>
 </table>
