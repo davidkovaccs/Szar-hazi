@@ -14,7 +14,7 @@
       <!-- <td><%= link_to "Show", account %></td> -->
       <td><%= link_to "Activálás", :controller => "accounts", :action =>  'activate', :id => account.id %></td>
       <td><%= link_to "Módosítás", edit_account_path(account) %></td>
-      <td><%= link_to "Törlés", account, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to "Törlés", account, :confirm => 'Biztosan?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>

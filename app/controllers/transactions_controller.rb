@@ -22,7 +22,7 @@ class TransactionsController < ApplicationController
   def create
     @transaction = Transaction.new(params[:transaction])
     if @transaction.save
-      redirect_to @transaction, :notice => "Successfully created transaction."
+      redirect_to @transaction, :notice => "Ügylet sikeresen létrehozva."
     else
       render :action => 'new'
     end
@@ -35,7 +35,7 @@ class TransactionsController < ApplicationController
   def update
     @transaction = Transaction.find(params[:id])
     if @transaction.update_attributes(params[:transaction])
-      redirect_to @transaction, :notice  => "Successfully updated transaction."
+      redirect_to @transaction, :notice  => "Ügylet sikeresen módosítva."
     else
       render :action => 'edit'
     end
@@ -44,6 +44,6 @@ class TransactionsController < ApplicationController
   def destroy
     @transaction = Transaction.find(params[:id])
     @transaction.destroy
-    redirect_to transactions_url, :notice => "Successfully destroyed transaction."
+    redirect_to transactions_url, :notice => "Ügylet sikeresen törölve."
   end
 end

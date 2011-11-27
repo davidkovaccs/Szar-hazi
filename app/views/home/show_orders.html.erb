@@ -1,11 +1,11 @@
-<% title "MY Orders" %>
+<% title "Megbízások" %>
 
 <table>
   <tr>
-    <th>Account</th>
-    <th>Stock</th>
-    <th>Price</th>
-    <th>Sell</th>
+    <th>Számla</th>
+    <th>Részvény</th>
+    <th>Ár</th>
+    <th>Eladás</th>
   </tr>
   <%
     orders = Array.new
@@ -18,8 +18,8 @@
       <td><%= order.price %></td>
       <td><%= order.sell %></td>
       <!-- <td><%= link_to "Show", order %></td> -->
-      <td><%= link_to "Edit", edit_order_path(order) %></td>
-      <td><%= link_to "Destroy", order, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to "Szerkesztés", edit_order_path(order) %></td>
+      <td><%= link_to "Törlés", order, :confirm => 'Biztosan?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>

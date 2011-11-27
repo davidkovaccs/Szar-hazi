@@ -1,4 +1,4 @@
-<% title "New Order" %>
+<% title "Új megbízás" %>
     <% 
       if current_user.accounts.find_by_active(1)
         selected = current_user.accounts.find_by_active(1).id
@@ -23,7 +23,7 @@
   </p>
   <p>
     <%= f.label :sell %><br />
-    <%= f.select :sell, [['Sell', 1], ['Buy', 0]], { :selected => 'Sell'}  %>
+    <%= f.select :sell, [['Eladás', 1], ['Vétel', 0]], { :selected => 'Eladás'}  %>
   </p>
   <p><%= f.submit %></p>
 <% end %>

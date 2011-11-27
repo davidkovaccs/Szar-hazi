@@ -17,7 +17,7 @@ class StocksController < ApplicationController
   def create
     @stock = Stock.new(params[:stock])
     if @stock.save
-      redirect_to @stock, :notice => "Successfully created stock."
+      redirect_to @stock, :notice => "Részvény sikeresen létrehozva."
     else
       render :action => 'new'
     end
@@ -30,7 +30,7 @@ class StocksController < ApplicationController
   def update
     @stock = Stock.find(params[:id])
     if @stock.update_attributes(params[:stock])
-      redirect_to @stock, :notice  => "Successfully updated stock."
+      redirect_to @stock, :notice  => "Részvény sikeresen módosítva."
     else
       render :action => 'edit'
     end
@@ -39,6 +39,6 @@ class StocksController < ApplicationController
   def destroy
     @stock = Stock.find(params[:id])
     @stock.destroy
-    redirect_to stocks_url, :notice => "Successfully destroyed stock."
+    redirect_to stocks_url, :notice => "Részvény sikeresen törölve."
   end
 end

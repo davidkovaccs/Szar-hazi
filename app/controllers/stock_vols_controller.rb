@@ -17,7 +17,7 @@ class StockVolsController < ApplicationController
   def create
     @stock_vol = StockVol.new(params[:stock_vol])
     if @stock_vol.save
-      redirect_to @stock_vol, :notice => "Successfully created stock vol."
+      redirect_to @stock_vol, :notice => "Részvény mennyiség sikeresen létrehozva."
     else
       render :action => 'new'
     end
@@ -30,7 +30,7 @@ class StockVolsController < ApplicationController
   def update
     @stock_vol = StockVol.find(params[:id])
     if @stock_vol.update_attributes(params[:stock_vol])
-      redirect_to @stock_vol, :notice  => "Successfully updated stock vol."
+      redirect_to @stock_vol, :notice  => "Részvény mennyiség sikeresen módosítva."
     else
       render :action => 'edit'
     end
@@ -39,6 +39,6 @@ class StockVolsController < ApplicationController
   def destroy
     @stock_vol = StockVol.find(params[:id])
     @stock_vol.destroy
-    redirect_to stock_vols_url, :notice => "Successfully destroyed stock vol."
+    redirect_to stock_vols_url, :notice => "Részvény mennyiség sikeresen törölve."
   end
 end

@@ -1,4 +1,4 @@
-<% title "Account" %>
+<% title "Számla" %>
 
 <p>
   <strong>User:</strong>
@@ -10,7 +10,7 @@
 </p>
 
 <p>
-  <%= link_to "Edit", edit_account_path(@account) %> |
-  <%= link_to "Destroy", @account, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", accounts_path %>
+  <%= link_to "Szerkesztés", edit_account_path(@account) %> |
+  <%= link_to "Törlés", @account, :confirm => 'Biztosan?', :method => :delete %> |
+  <%= link_to "Összeset megtekint", accounts_path %>
 </p>

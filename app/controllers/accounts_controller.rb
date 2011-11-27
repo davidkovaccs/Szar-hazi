@@ -28,7 +28,7 @@ class AccountsController < ApplicationController
     @account = Account.new(params[:account])
     @account.user_id = current_user.id
     if @account.save
-      redirect_to @account, :notice => "Successfully created account."
+      redirect_to @account, :notice => "Regisztráció sikeresen létrehozva."
     else
       render :action => 'new'
     end

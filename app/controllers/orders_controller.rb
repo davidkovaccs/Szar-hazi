@@ -47,12 +47,12 @@ class OrdersController < ApplicationController
   def check_transaction
     Rails.logger.info "buy: " + @order.buy?.to_s
     if !@order.buy? and @order.account.stock_vols.find_by_stock_id(@order.stock_id).nil?
-      flash[:alert] = "Nincs ilyen tozsdei papir a '" + @order.account.name + "' szamlan"
+      flash[:alert] = "Nincs ilyen tőzsdei papír a '" + @order.account.name + "' számlán."
       return false
     end
     
     if @order.buy? and params[:order][:price].to_i > @order.account.balance
-      flash[:alert] = "Nincs eleg penz a '" + @order.account.name + "' szamlan"
+      flash[:alert] = "Nincs elég pénz a '" + @order.account.name + "' számlán."
       return false
     end
     ord = Order.find(:first, :conditions => ["stock_id = ? and price = ? and sell != ? and user_id <> ?", @order.stock_id, @order.price, @order.sell, @order.account.user.id])
@@ -130,7 +130,7 @@ class OrdersController < ApplicationController
     @order.user_id = current_user.id;
 
     if (check_transaction)
-      redirect_to @order, :notice => "Successfully created order."
+      redirect_to @order, :notice => "Megbízás sikeresen létrehozva."
     else
       redirect_to :action => 'new'
     end
@@ -148,7 +148,7 @@ class OrdersController < ApplicationController
     @order.attributes = params[:order]
 
     if check_transaction
-      redirect_to @order, :notice  => "Successfully updated order."
+      redirect_to @order, :notice  => "Megbízás sikeresen módosítva."
     else
       render :action => 'edit'
     end
@@ -157,6 +157,6 @@ class OrdersController < ApplicationController
   def destroy
     @order = Order.find(params[:id])
     @order.destroy
-    redirect_to orders_url, :notice => "Successfully destroyed order."
+    redirect_to orders_url, :notice => "Megbízás sikeresen törölve."
   end
 end

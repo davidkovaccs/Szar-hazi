@@ -3,56 +3,56 @@
 en:
   errors:
     messages:
-      expired: "has expired, please request a new one"
-      not_found: "not found"
-      already_confirmed: "was already confirmed, please try signing in"
-      not_locked: "was not locked"
+      expired: "lejárt, kérjen újat" 
+      not_found: "nem található"
+      already_confirmed: "megerősítve, kérjük próbáljon bejelenktkezni"
+      not_locked: "nincs zárolva"
       not_saved:
-        one: "1 error prohibited this %{resource} from being saved:"
-        other: "%{count} errors prohibited this %{resource} from being saved:"
+        one: "1 hiba megakadályozta a %{resource} erőforrás mentését:"
+        other: "%{count} hiba megakadályozta a %{resource} erőforrás mentését:"
 
   devise:
     failure:
-      already_authenticated: 'You are already signed in.'
-      unauthenticated: 'You need to sign in or sign up before continuing.'
-      unconfirmed: 'You have to confirm your account before continuing.'
-      locked: 'Your account is locked.'
-      invalid: 'Invalid email or password.'
-      invalid_token: 'Invalid authentication token.'
-      timeout: 'Your session expired, please sign in again to continue.'
-      inactive: 'Your account was not activated yet.'
+      already_authenticated: 'Már be van jelentkezve.'
+      unauthenticated: 'Kérjük regisztráljon vagy jelentkezzen be a folytatáshoz.'
+      unconfirmed: 'Kérjük regisztrációja megerősítését a folytatáshoz.'
+      locked: 'A regisztrációja zárolva van.'
+      invalid: 'Hibás email cím vagy jelszó.'
+      invalid_token: 'Érvénytelen bejelentkezés.'
+      timeout: 'Időlimit lejárt, kérjük jelentkezzel be újra a folytatáshoz.'
+      inactive: 'A regisztrációja még nem aktív.'
     sessions:
-      signed_in: 'Signed in successfully.'
-      signed_out: 'Signed out successfully.'
+      signed_in: 'Sikeres bejelentkezés.'
+      signed_out: 'Sikeres kijelentkezés.'
     passwords:
-      send_instructions: 'You will receive an email with instructions about how to reset your password in a few minutes.'
-      updated: 'Your password was changed successfully. You are now signed in.'
-      updated_not_active: 'Your password was changed successfully.'
-      send_paranoid_instructions: "If your e-mail exists on our database, you will receive a password recovery link on your e-mail"
+      send_instructions: 'Néhány percen belül kap egy emailt a jelszó visszaállításához szükséges információkkal.'
+      updated: 'A jelszó sikeresen megváltoztatva. Ön most be van jelentkezve.'
+      updated_not_active: 'A jelszó sikeresen megváltoztatva.'
+      send_paranoid_instructions: "Ha az email címe szerepel az adatbázisban, ön kapni fog egy email a jelszó visszaállításához szükséges linkkel."
     confirmations:
-      send_instructions: 'You will receive an email with instructions about how to confirm your account in a few minutes.'
-      send_paranoid_instructions: 'If your e-mail exists on our database, you will receive an email with instructions about how to confirm your account in a few minutes.'
-      confirmed: 'Your account was successfully confirmed. You are now signed in.'
+      send_instructions: 'Néhány percen belül kap egy emailt a regisztráció megerősítéséhez szükséges információkkal.'
+      send_paranoid_instructions: 'Ha az email címe szerepel az adatbázisban, ön kapni fog egy email a regisztráció megerősítéséhez szükséges információkkal.'
+      confirmed: 'A regisztrációja sikeresen megerősítve. Ön most be van jelentkezve.'
     registrations:
-      signed_up: 'Welcome! You have signed up successfully.'
-      inactive_signed_up: 'You have signed up successfully. However, we could not sign you in because your account is %{reason}.'
-      updated: 'You updated your account successfully.'
-      destroyed: 'Bye! Your account was successfully cancelled. We hope to see you again soon.'
+      signed_up: 'Üdvözöljük! Ön sikeresen regisztrált.'
+      inactive_signed_up: 'Ön sikeresen regisztrált. Azonban, nem tudtuk bejelentkeztetni, mert a regisztrációja %{reason}.'
+      updated: 'Ün sikeresen módosította a regisztrációját.'
+      destroyed: 'A regisztrációját sikeresen megszüntettük.'
       reasons:
-        inactive: 'inactive'
-        unconfirmed: 'unconfirmed'
-        locked: 'locked'
+        inactive: 'inktív'
+        unconfirmed: 'nincs megerősítve'
+        locked: 'zárolva van'
     unlocks:
-      send_instructions: 'You will receive an email with instructions about how to unlock your account in a few minutes.'
-      unlocked: 'Your account was successfully unlocked. You are now signed in.'
-      send_paranoid_instructions: 'If your account exists, you will receive an email with instructions about how to unlock it in a few minutes.'
+      send_instructions: 'Néhány percen belül kap egy emailt a regisztráció zárolásának megszüntetéséhez szükséges információkkal.'
+      unlocked: 'A regisztrációjának zárolása sikeresen megszüntetve. Ön most be van jelentkezve.'
+      send_paranoid_instructions: 'Ha az email címe szerepel az adatbázisban, ön kapni fog egy email a regisztráció zárolásának megszüntetéséhez szükséges információkkal.'
     omniauth_callbacks:
-      success: 'Successfully authorized from %{kind} account.'
-      failure: 'Could not authorize you from %{kind} because "%{reason}".'
+      success: 'Sikeres authorizáció a %{kind} regisztrációval.'
+      failure: 'Sikertelen authorizáció a %{kind} regisztrációval, mert "%{reason}".'
     mailer:
       confirmation_instructions:
-        subject: 'Confirmation instructions'
+        subject: 'Megerősítéssel kapcsolatos instrukció'
       reset_password_instructions:
-        subject: 'Reset password instructions'
+        subject: 'Jelszó visszaállításával kapcsolatos instrukciók'
       unlock_instructions:
-        subject: 'Unlock Instructions'
+        subject: 'A regisztráció zárolásának megszüntetésével kapcsolatos instrukciók'

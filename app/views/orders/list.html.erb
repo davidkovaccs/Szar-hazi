@@ -20,7 +20,7 @@
       <!-- <td><%= link_to "Show", order %></td> -->
 	  <% if order.transaction_id.nil? %>
       	<td><%= link_to "Szerkesztés", edit_order_path(order) %></td>
-      	<td><%= link_to "Törlés", order, :confirm => 'Are you sure?', :method => :delete %></td>
+      	<td><%= link_to "Törlés", order, :confirm => 'Biztosan?', :method => :delete %></td>
 	  <% else %>
 	  	<td>Tranzakció létrejött</td>
 	  <% end %>
