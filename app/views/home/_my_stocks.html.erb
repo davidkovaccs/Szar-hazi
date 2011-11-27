@@ -13,7 +13,7 @@
       current_user.accounts.map { |account|
           account.orders.find(:all, :conditions => "sell = '0' and transaction_id != ''").group_by(&:stock_id).each do |stock_id, corders|
               ordered = corders.sort{|a,b| a.created_at <=> b.created_at}
-              my_orders |= [ordered.last]
+              my_orders |= ordered.last(account.stock_vols.find_by_stock_id(stock_id).volume)
               Rails.logger.info "ASDF HELLO: " + stock_id.to_s
           end
       }

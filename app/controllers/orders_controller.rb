@@ -42,15 +42,16 @@ class OrdersController < ApplicationController
     
   end
 
-  def create
-    @order = Order.new(params[:order])
-    
-    @order.user_id = current_user.id;
+  def check_transaction
+    Rails.logger.info "buy: " + @order.buy?.to_s
+    if !@order.buy? and @order.account.stock_vols.find_by_stock_id(@order.stock_id).nil?
+      flash[:alert] = "Nincs ilyen tozsdei papir a '" + @order.account.name + "' szamlan"
+      return false
+    end
     
     if @order.buy? and params[:order][:price].to_i > @order.account.balance
       flash[:alert] = "Nincs eleg penz a '" + @order.account.name + "' szamlan"
-      redirect_to :action => 'new'
-      return
+      return false
     end
 
     ord = Order.find(:first, :conditions => ["stock_id = ? and price = ? and sell != ? and user_id <> ?", @order.stock_id, @order.price, @order.sell, @order.account.user.id])
@@ -71,6 +72,40 @@ class OrdersController < ApplicationController
         ord.save
         @order.save
 
+        stockVol = ord.account.stock_vols.find_by_stock_id(ord.stock_id)
+        if stockVol.nil?
+          stockVol = StockVol.new
+          stockVol.volume = 0
+          stockVol.account_id = ord.account_id
+          stockVol.stock_id = ord.stock_id
+        end
+
+        if (ord.buy?)
+          Rails.logger.info "Ord0: " + ord.sell.to_s
+          stockVol.volume += 1
+        else
+          Rails.logger.info "Ord1: " + ord.sell.to_s
+          stockVol.volume -= 1
+        end
+        stockVol.save
+
+        stockVol2 = @order.account.stock_vols.find_by_stock_id(@order.stock_id)
+        if stockVol2.nil?
+          stockVol2 = StockVol.new
+          stockVol2.volume = 0
+          stockVol2.account_id = @order.account_id
+          stockVol2.stock_id = @order.stock_id
+        end
+
+        if (@order.buy?)
+          Rails.logger.info "Ord0: " + @order.sell.to_s
+          stockVol2.volume += 1
+        else
+          Rails.logger.info "Ord1: " + @order.sell.to_s
+          stockVol2.volume -= 1
+        end
+        stockVol2.save
+
         if @order.buy?
           ord.update_account
         else
@@ -78,9 +113,23 @@ class OrdersController < ApplicationController
         end
         @order.stock.update_price
       end
+      return true
+    else
+      return false
+    end
+
+    return true
+  end
+
+  def create
+    @order = Order.new(params[:order])
+    
+    @order.user_id = current_user.id;
+
+    if (check_transaction)
       redirect_to @order, :notice => "Successfully created order."
     else
-      render :action => 'new'
+      redirect_to :action => 'new'
     end
   end
 
@@ -93,7 +142,9 @@ class OrdersController < ApplicationController
 
   def update
     @order = Order.find(params[:id])
-    if @order.update_attributes(params[:order])
+    @order.attributes = params[:order]
+
+    if check_transaction
       redirect_to @order, :notice  => "Successfully updated order."
     else
       render :action => 'edit'

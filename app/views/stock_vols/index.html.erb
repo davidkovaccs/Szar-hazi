@@ -1,0 +1,21 @@
+<% title "Stock Vols" %>
+
+<table>
+  <tr>
+    <th>Account</th>
+    <th>Volume</th>
+    <th>Stock</th>
+  </tr>
+  <% for stock_vol in @stock_vols %>
+    <tr>
+      <td><%= stock_vol.account_id %></td>
+      <td><%= stock_vol.volume %></td>
+      <td><%= stock_vol.stock_id %></td>
+      <td><%= link_to "Show", stock_vol %></td>
+      <td><%= link_to "Edit", edit_stock_vol_path(stock_vol) %></td>
+      <td><%= link_to "Destroy", stock_vol, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Stock Vol", new_stock_vol_path %></p>

@@ -1,0 +1,2 @@
+module StockVolsHelper
+end
