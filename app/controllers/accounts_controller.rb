@@ -8,7 +8,11 @@ class AccountsController < ApplicationController
   end
 
   def list
-    @accounts = Account.find_by_sql ["SELECT * FROM accounts WHERE user_id = ? ", params[:id]]
+    if params[:id]
+      @accounts = Account.find_by_sql ["SELECT * FROM accounts WHERE user_id = ? ", params[:id]]
+    else
+      @accounts = Account.all
+    end
   end
 
   def listall
