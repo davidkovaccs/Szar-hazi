@@ -13,3 +13,7 @@
   <strong>E-mail cím:</strong>
   <%= @user.email %>
 </p>
+
+<p>
+  <%= link_to "Szerkesztés", @user.id.to_s + '/edit'  %>
+</p>
