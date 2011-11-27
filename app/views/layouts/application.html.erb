@@ -46,7 +46,7 @@
           	<% end %>
 			<% if current_user.role? :admin  %>
               <li><%= link_to "Felhasználók", :controller => 'users', :action => 'index' %></li>
-              <li><%= link_to "Számlák", :controller => 'accounts', :action => 'list' %></li>
+              <li><%= link_to "Számlák", :controller => 'accounts', :action => 'listall' %></li>
           	<% end %>
 			<% if current_user.role? :broker  %>
               <li><%= link_to "Felhasználók", :controller => 'users', :action => 'index' %></li>

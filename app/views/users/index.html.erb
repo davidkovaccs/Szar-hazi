@@ -11,13 +11,7 @@
 	<td><%= user.first_name %></td>
 	<td><%= user.last_name %></td>
 	<% if current_user.role? :admin  %>
-          	
-		<td>
-		  <%= link_to "Szerkesztés", user, :method => :edit %>
-	  	</td>
-		<td>
-		  <%= link_to "Törlés", user, :confirm => 'Biztosan?', :method => :destroy %>
-	  	</td>
+         
 		<td>
 		  <% if user.active == 1 %>
 		    <%= link_to "Felfüggesztés", :controller => "users", :action =>  'deactivate', :id => user.id %>
