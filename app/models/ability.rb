@@ -22,7 +22,7 @@ class Ability
         true
       end
       can [:delete], Order do |order|
-        true
+        order.account.try(:user) == user
       end
      
       can [:index, :show], Transaction do |transaction|
