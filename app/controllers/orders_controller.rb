@@ -55,8 +55,9 @@ class OrdersController < ApplicationController
       flash[:alert] = "Nincs eleg penz a '" + @order.account.name + "' szamlan"
       return false
     end
-
     ord = Order.find(:first, :conditions => ["stock_id = ? and price = ? and sell != ? and user_id <> ?", @order.stock_id, @order.price, @order.sell, @order.account.user.id])
+    
+    
     if @order.save
       if @order.buy?
         @order.update_account
@@ -66,7 +67,7 @@ class OrdersController < ApplicationController
       if ord
         Rails.logger.info "ASDFASDFASDFASDF"
         trans = Transaction.new
-        trans.price = @order.price
+        trans.price = ord.price
         trans.stock_id = @order.stock_id
         trans.save
         ord.transaction_id = trans.id
