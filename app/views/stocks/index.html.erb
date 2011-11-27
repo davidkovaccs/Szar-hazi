@@ -1,19 +1,19 @@
-<%# title "Stocks" %>
+<% title "Részvények" %>
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Price</th>
+    <th>Név</th>
+    <th>Ár</th>
   </tr>
   <% for stock in @stocks %>
     <tr>
       <td><%= stock.name %></td>
       <td><%= stock.price %></td>
-      <td><%= link_to "Show", stock %></td>
-      <td><%= link_to "Edit", edit_stock_path(stock) %></td>
-      <td><%= link_to "Destroy", stock, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to "Megtekintés", stock %></td>
+      <td><%= link_to "Szerkesztés", edit_stock_path(stock) %></td>
+      <td><%= link_to "Törlés", stock, :confirm => 'Biztosan?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>
 
-<p><%= link_to "New Stock", new_stock_path %></p>
+<p><%= link_to "Új részvény", new_stock_path %></p>
