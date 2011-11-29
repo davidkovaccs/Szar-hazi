@@ -15,7 +15,7 @@ SzarHazi::Application.routes.draw do
     get "transactions/list"
   
   devise_for :users
-  resources :users, :only => [:index, :show]
+  resources :users, :only => [:index, :show, :update, :edit]
   resources :transactions
 
   resources :orders
@@ -23,8 +23,6 @@ SzarHazi::Application.routes.draw do
   resources :accounts
 
   resources :stocks
-
-  resources :users
 
   root :to => "home#index"
 
@@ -36,6 +34,9 @@ SzarHazi::Application.routes.draw do
   match 'accounts/:id/activate' => 'accounts#activate'
   match 'users/:id/activate' => 'users#activate'
   match 'users/:id/deactivate' => 'users#deactivate'
+  match 'users/:id/touser' => 'users#touser'
+  match 'users/:id/tobroker' => 'users#tobroker'
+  match 'users/:id/toadmin' => 'users#toadmin'
 #  match 'users/:id/edit' => 'users#edit'
 #  match 'users/:id' => 'users#show'
 

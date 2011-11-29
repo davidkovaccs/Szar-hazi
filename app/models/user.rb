@@ -19,6 +19,16 @@ class User < ActiveRecord::Base
   def active_for_authentication? 
     super && active? 
   end 
+  
+  def role_to_s
+    if self.role? :admin
+      return 'adminisztrátor'
+    elsif self.role? :broker
+      return 'bróker'
+    else
+      return 'ügyfél'
+    end
+  end 
 
   def inactive_message 
     if !active? 

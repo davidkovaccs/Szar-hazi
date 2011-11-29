@@ -37,4 +37,35 @@ class UsersController < ApplicationController
     @user.save
     redirect_to '/users', :notice => @user.first_name + " " + @user.last_name + " felhasználó felfüggesztve."
   end
+  
+  def touser
+    if !current_user.role?(:admin)
+      redirect_to @user, :notice => "Nincs jogosultsága módosítani.."
+      return
+    end
+    @user = User.find(params[:id])
+      @user.roles = [Role.find_by_name(:user)]
+    redirect_to @user, :notice => "Szerepkör módisítva."
+  end
+
+  def toadmin
+    if !current_user.role?(:admin)
+      redirect_to @user, :notice => "Nincs jogosultsága módosítani.."
+      return
+    end
+    @user = User.find(params[:id])
+    @user.roles = [Role.find_by_name(:admin)]
+    redirect_to @user, :notice => "Szerepkör módisítva."
+  end
+
+  def tobroker
+    if !current_user.role?(:admin)
+      redirect_to @user, :notice => "Nincs jogosultsága módosítani.."
+      return
+    end
+    @user = User.find(params[:id])
+    @user.roles = [Role.find_by_name(:broker)]
+    @user.save
+    redirect_to @user, :notice => "Szerepkör módisítva."
+  end
 end

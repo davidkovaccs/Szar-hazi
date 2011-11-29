@@ -15,5 +15,16 @@
 </p>
 
 <p>
+  <strong>Szerepkör:</strong>
+  <%= @user.role_to_s %>
+</p>
+
+<p>
   <%= link_to "Szerkesztés", @user.id.to_s + '/edit'  %>
+</p>
+  <%= link_to "Kinevezés brókerré", @user.id.to_s + '/tobroker'  %>
+</p>
+  <%= link_to "Kinevezés adminisztrátorrá", @user.id.to_s + '/toadmin'  %>
+</p>
+  <%= link_to "Kinevezés ügyféllé", @user.id.to_s + '/touser'  %>
 </p>
