@@ -24,6 +24,8 @@ SzarHazi::Application.routes.draw do
 
   resources :stocks
 
+  resources :users
+
   root :to => "home#index"
 
   match 'buy' => 'home#buy'
@@ -34,8 +36,8 @@ SzarHazi::Application.routes.draw do
   match 'accounts/:id/activate' => 'accounts#activate'
   match 'users/:id/activate' => 'users#activate'
   match 'users/:id/deactivate' => 'users#deactivate'
-  match 'users/:id/edit' => 'users#edit'
-  match 'users/:id' => 'users#show'
+#  match 'users/:id/edit' => 'users#edit'
+#  match 'users/:id' => 'users#show'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

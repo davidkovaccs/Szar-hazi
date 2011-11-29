@@ -16,8 +16,9 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update_attributes(params[:user])
-      redirect_to @transaction, :notice  => "Felhasznalo sikeresen módosítva."
+    Rails.logger.info "Password: " + @user.first_name
+    if @user.update_attribute(:first_name, params[:user][:first_name]) and @user.update_attribute(:last_name, params[:user][:last_name]) and @user.update_attribute(:email, params[:user][:email])
+      redirect_to @user, :notice  => "Felhasznalo sikeresen módosítva."
     else
       render :action => 'edit'
     end
